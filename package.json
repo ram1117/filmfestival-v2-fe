@@ -31,10 +31,10 @@
     "typescript": "^5"
   },
   "lint-staged": {
-    "*.ts,.tsx": [
-      "prettier --write",
-      "eslint max-warnings=0"
+    "**/*.{ts,tsx}": [
+      "eslint --max-warnings=0 --fix",
+      "prettier --write"
     ],
-    "*.css":"prettier --write"
+    "**/*.{json,css,scss,md,webmanifest}": "prettier --write"
   }
 }
