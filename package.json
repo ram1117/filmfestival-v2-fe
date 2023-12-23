@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "format:check": "prettier --check",
+    "lint:strict": "eslint"
   },
   "dependencies": {
     "next": "14.0.4",
