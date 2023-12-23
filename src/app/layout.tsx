@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { oswald, robotocondensed, roboto } from "@/atoms/fonts";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import MenuBar from "@/components/navbar/MenuBar";
+import NavBar from "@/components/navbar/NavBar";
 
 export const metadata: Metadata = {
   title: "Film Festival",
@@ -15,8 +15,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html
+      lang="en"
+      className={`${oswald.variable} ${robotocondensed.variable} ${roboto.variable}`}
+    >
+      <body className="font-roboto">
+        <MenuBar />
+        <NavBar />
+        {children}
+      </body>
     </html>
   );
 }
