@@ -15,7 +15,7 @@ const ProgramItem = ({ program }: ProgramItemProps) => (
     <ImageWrapper
       src={program.logoSrc}
       alt={program.alt}
-      imageSize="h-10 w-10 sm:h-20 sm:w-20"
+      imageSize="h-10 w-10 sm:h-16 sm:w-16"
     />
     <div className="text-center">
       <h3 className="text-custom-red font-semibold text-lg lg:text-2xl">

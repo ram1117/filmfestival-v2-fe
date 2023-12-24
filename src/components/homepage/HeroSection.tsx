@@ -1,7 +1,7 @@
 import { heroSectionData } from "@/data/HomePageData";
 
 const HeroSection = () => (
-  <section className="min-h-max md:min-h-[65vh] lg:min-h-[80vh] w-full bg-main-bg bg-contain md:bg-cover bg-no-repeat my-4 p-4 flex flex-col items-start lg:justify-center text-text-secondary">
+  <section className="min-h-max lg:min-h-[80vh] w-full bg-main-bg bg-contain md:bg-cover bg-no-repeat my-4 p-4 flex flex-col items-start lg:justify-center text-text-secondary">
     <div className="font-lato font-black text-2xl md:text-3xl lg:text-8xl flex flex-col gap-2 lg:gap-4 ">
       <h2 className="font-bold text-custom-red text-xl lg:text-4xl">
         {`"${heroSectionData.title4}"`}

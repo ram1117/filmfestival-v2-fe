@@ -15,6 +15,7 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         "main-bg": "url('/images/main-page-bg.svg')",
         "cross-bg": "url('/icons/cross-icon-1.svg')",
+        "jury-tile-bg": "url('/images/jury/checkered-box-light.svg')",
       },
       fontFamily: {
         oswald: "var(--font-oswald)",

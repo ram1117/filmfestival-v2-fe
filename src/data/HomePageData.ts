@@ -47,4 +47,60 @@ const programSectionData = [
   },
 ];
 
-export { heroSectionData, programSectionData };
+const juryData = [
+  {
+    id: 1,
+    name: "Jinko Gotoh",
+    title: "Producer, Consultant",
+    description:
+      "Jinko Gotoh is an award-winning producer and consultant for the animation industry. ",
+    imgSrc: "/images/jury/Jinko-Gotoh.jpg",
+    alt: "Jinko Gotoh photo",
+  },
+  {
+    id: 2,
+    name: "Revathi",
+    title: "Actor, Screenplay Writer, Director",
+    description:
+      "Revathi is an Indian actress and director, known for her works predominantly in Tamil & Malayalam cinema - in addition to Telugu, Hindi & Kannada films",
+    imgSrc: "/images/jury/revathi.jpg",
+    alt: "Revathi photo",
+  },
+  {
+    id: 3,
+    name: "Suhasini Maniratnam",
+    title: "Actor, Director",
+    description:
+      "Suhasini is an Indian actress, director, producer and writer in the Tamil film industry. She has worked as an actress in Tamil, Telugu, Malayalam and Kannada films.",
+    imgSrc: "/images/jury/suhasini.png",
+    alt: "Suhasini photo",
+  },
+  {
+    id: 4,
+    name: "Madhan",
+    title: "Cartoonist, Writer, Film Critic",
+    description:
+      "Madhan is a Tamil cartoonist, journalist, writer and film critic.",
+    imgSrc: "/images/jury/madhan.jpg",
+    alt: "Madhan photo",
+  },
+  {
+    id: 5,
+    name: "Sudipto Sen",
+    title: "Writer, Director",
+    description:
+      "Sudipto Sen is a film Director, who has worked predominantly in Indian cinema.",
+    imgSrc: "/images/jury/Sudipto-Sen.jpg",
+    alt: "Sudipto Sen photo",
+  },
+  {
+    id: 6,
+    name: "Komal Nahta",
+    title: "Film Trade Analyst, Anchor",
+    description: `Komal Nahta is an Indian film trade analyst. Nahta is the publisher of "Film Information" and also a television show host.`,
+    imgSrc: "/images/jury/Komal-Nahta.jpg",
+    alt: "Komal Nahta photo",
+  },
+];
+
+export { heroSectionData, programSectionData, juryData };
