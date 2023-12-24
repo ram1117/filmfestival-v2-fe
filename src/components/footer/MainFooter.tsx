@@ -1,5 +1,5 @@
 const MainFooter = () => (
-  <footer className="flex py-2 px-6 justify-between items-center text-xs lg:text-sm">
+  <footer className="flex py-2 px-6 justify-between items-center text-xxs lg:text-xs">
     <div>
       <h5 className="font-semibold text-sm">Madras Film Club</h5>
       <h5>Copyright 2017. All rigts reserved</h5>

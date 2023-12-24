@@ -17,6 +17,9 @@ const config: Config = {
         "cross-bg": "url('/icons/cross-icon-1.svg')",
         "jury-tile-bg": "url('/images/jury/checkered-box-light.svg')",
       },
+      fontSize: {
+        xxs: "0.6rem",
+      },
       fontFamily: {
         oswald: "var(--font-oswald)",
         "roboto-condensed": "var(--font-roboto-condensed)",

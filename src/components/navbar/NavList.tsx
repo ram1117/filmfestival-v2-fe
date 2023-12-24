@@ -13,9 +13,7 @@ const navItemsData = [
 ];
 
 const NavList = ({ className }: NavListProps) => (
-  <ul
-    className={`${className}  text-text-secondary font-bold font-roboto-condensed`}
-  >
+  <ul className={`${className}  font-bold font-roboto-condensed`}>
     {navItemsData.map((item) => (
       <NavListItem linkData={item} key={item.id} />
     ))}
