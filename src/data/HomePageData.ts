@@ -9,4 +9,42 @@ const heroSectionData = {
   venue: "@ Chennai Trade Center,Nandambakkam",
 };
 
-export { heroSectionData };
+const programSectionData = [
+  {
+    id: 1,
+    title: "Screenings",
+    description: "Over 20 films to be screened",
+    logoSrc: "/icons/events/icon-screen.svg",
+    alt: "Film Icon",
+  },
+  {
+    id: 2,
+    title: "Workshops",
+    description: "Workshops by eminent directors",
+    logoSrc: "/icons/events/icon-camera.svg",
+    alt: "Camera Icon",
+  },
+  {
+    id: 3,
+    title: "Forums",
+    description: "Share ideas with movie enthusiasts",
+    logoSrc: "/icons/events/icon-forum.svg",
+    alt: "Forum Icon",
+  },
+  {
+    id: 4,
+    title: "Press",
+    description: "Press meet with the Jury Members",
+    logoSrc: "/icons/events/icon-press.svg",
+    alt: "Microphones Icon",
+  },
+  {
+    id: 5,
+    title: "Awards",
+    description: "Awards ceremony for winning entries",
+    logoSrc: "/icons/events/icon-medal.svg",
+    alt: "Medal Icon",
+  },
+];
+
+export { heroSectionData, programSectionData };

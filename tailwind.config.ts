@@ -14,6 +14,7 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         "main-bg": "url('/images/main-page-bg.svg')",
+        "cross-bg": "url('/icons/cross-icon-1.svg')",
       },
       fontFamily: {
         oswald: "var(--font-oswald)",
@@ -27,6 +28,8 @@ const config: Config = {
         "text-primary": "#fbfbfb",
         "text-secondary": "#575863",
         "text-light": "#a4abba",
+        "gray-dark": "#272a31",
+        "program-tile-bg": "#494a4c",
       },
     },
   },
