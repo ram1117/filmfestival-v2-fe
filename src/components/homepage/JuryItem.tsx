@@ -24,11 +24,14 @@ const JuryItem = ({ juryItemData }: JuryItemProps) => (
       </div>
     </div>
     <div className="w-2/3 font-lato">
-      <h3 className="text-xl lg:text-2xl font-bold">{juryItemData.name}</h3>
-      <h4 className="italic text-base lg:text-lg font-semibold text-custom-red">
+      <h3 className="text-xl lg:text-2xl font-bold mb-2">
+        {juryItemData.name}
+      </h3>
+      <h4 className="italic text-base lg:text-lg font-semibold text-custom-red mb-2">
         {juryItemData.title}
       </h4>
-      <h4>{juryItemData.description}</h4>
+      <div className="w-16 border-b-2 border-b-gray-dark mb-2" />
+      <h4 className="text-sm lg:text-base">{juryItemData.description}</h4>
     </div>
   </li>
 );

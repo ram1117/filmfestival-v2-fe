@@ -103,4 +103,16 @@ const juryData = [
   },
 ];
 
-export { heroSectionData, programSectionData, juryData };
+const partnersData = [
+  { id: 1, imgSrc: "/images/partners/partner-logo-1.svg", alt: "SunNxt Logo" },
+  {
+    id: 2,
+    imgSrc: "/images/partners/partner-logo-2.svg",
+    alt: "Start Corp Logo",
+  },
+  { id: 3, imgSrc: "/images/partners/partner-logo-3.svg", alt: "Lotus Logo" },
+  { id: 4, imgSrc: "/images/partners/partner-logo-4.svg", alt: "Big FM Logo" },
+  { id: 5, imgSrc: "/images/partners/partner-logo-5.svg", alt: "Innox Logo" },
+];
+
+export { heroSectionData, programSectionData, juryData, partnersData };
