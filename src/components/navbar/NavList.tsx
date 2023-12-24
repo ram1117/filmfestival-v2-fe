@@ -1,26 +1,25 @@
 import Link from "next/link";
+import NavListItem from "./NavListItem";
 
 interface NavListProps {
   className: string;
 }
 
+const navItemsData = [
+  { id: 1, title: "About", link: "/about" },
+  { id: 2, title: "Schedule", link: "/schedule" },
+  { id: 3, title: "Venues", link: "/venues" },
+  { id: 4, title: "Partners", link: "/partners" },
+];
+
 const NavList = ({ className }: NavListProps) => (
   <ul
     className={`${className}  text-text-secondary font-bold font-roboto-condensed`}
   >
-    <li className="p-2">
-      <Link href="/about">About</Link>
-    </li>
-    <li className="p-2">
-      <Link href="/schedule">Schedule</Link>
-    </li>
-    <li className="p-2">
-      <Link href="/venues">Venues</Link>
-    </li>
-    <li className="p-2">
-      <Link href="/partners">Partners</Link>
-    </li>
-    <li className="p-2 bg-custom-red rounded-md text-text-primary">
+    {navItemsData.map((item) => (
+      <NavListItem linkData={item} key={item.id} />
+    ))}
+    <li className="p-2 bg-custom-red rounded-md text-text-primary hover:bg-text-primary hover:text-custom-red border-2 border-custom-red">
       <Link href="/reserve">Reserve</Link>
     </li>
   </ul>
