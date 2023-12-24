@@ -13,11 +13,13 @@ const config: Config = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "main-bg": "url('/images/main-page-bg.svg')",
       },
       fontFamily: {
         oswald: "var(--font-oswald)",
         "roboto-condensed": "var(--font-roboto-condensed)",
         roboto: "var(--font-roboto)",
+        lato: "var(--font-lato)",
       },
       colors: {
         "menubar-bg": "#272a31",

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { oswald, robotocondensed, roboto } from "@/atoms/fonts";
+import { oswald, robotocondensed, roboto, lato } from "@/atoms/fonts";
 import "./globals.css";
 import MenuBar from "@/components/navbar/MenuBar";
 import NavBar from "@/components/navbar/NavBar";
@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${oswald.variable} ${robotocondensed.variable} ${roboto.variable}`}
+      className={`${oswald.variable} ${robotocondensed.variable} ${roboto.variable} ${lato.variable}`}
     >
       <body className="font-roboto">
         <MenuBar />

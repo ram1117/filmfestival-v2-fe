@@ -1,6 +1,6 @@
 import Link from "next/link";
 import ImageWrapper from "@/atoms/ImageWrapper";
-import Logo from "@/public/icons/icon-camera.svg";
+import Logo from "@public/icons/icon-camera.svg";
 
 const LogoItem = () => (
   <Link href="/">
