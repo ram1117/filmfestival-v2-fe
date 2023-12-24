@@ -3,6 +3,7 @@ import { oswald, robotocondensed, roboto, lato } from "@/atoms/fonts";
 import "./globals.css";
 import MenuBar from "@/components/navbar/MenuBar";
 import NavBar from "@/components/navbar/NavBar";
+import MainFooter from "@/components/footer/MainFooter";
 
 export const metadata: Metadata = {
   title: "Film Festival",
@@ -23,6 +24,7 @@ export default function RootLayout({
         <MenuBar />
         <NavBar />
         {children}
+        <MainFooter />
       </body>
     </html>
   );

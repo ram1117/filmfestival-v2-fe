@@ -27,7 +27,7 @@ const config: Config = {
         "menubar-bg": "#272a31",
         "custom-red": "#ec5242",
         "text-primary": "#fbfbfb",
-        "text-secondary": "#575863",
+        "text-secondary": "#272a31",
         "text-light": "#a4abba",
         "gray-dark": "#272a31",
         "program-tile-bg": "#494a4c",
