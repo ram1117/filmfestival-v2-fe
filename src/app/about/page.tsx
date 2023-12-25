@@ -1,7 +1,9 @@
+import AboutHero from "@/components/aboutpage/AboutHero";
+
 const AboutPage = () => (
-  <section>
-    <h1>About</h1>
-  </section>
+  <main>
+    <AboutHero />
+  </main>
 );
 
 export default AboutPage;

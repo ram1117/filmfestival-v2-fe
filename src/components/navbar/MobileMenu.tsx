@@ -10,15 +10,11 @@ const MobileMenu = () => {
 
   return (
     <div className="relative">
-      <button
-        type="button"
-        className=""
-        onClick={() => setOpenPanel((prev) => !prev)}
-      >
+      <button type="button" onClick={() => setOpenPanel((prev) => !prev)}>
         <ImageWrapper
           src={MenuIcon}
           alt="hamburger menu button"
-          imageSize="h-8 w-8 border-2 p-1 rounded-md"
+          imageSize="h-8 w-8 p-1 "
         />
       </button>
       {openPanel && (

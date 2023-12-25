@@ -5,7 +5,7 @@ import PartnersSection from "@/components/homepage/PartnersSection";
 
 export default function Home() {
   return (
-    <main className="">
+    <main>
       <HeroSection />
       <ProgramSection />
       <JurySection />
