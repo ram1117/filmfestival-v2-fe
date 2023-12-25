@@ -7,4 +7,9 @@ const aboutHeroData = {
   contact2: `+918888777722`,
 };
 
-export { aboutHeroData };
+const logoSectionData = {
+  para1: `The Logo for the Film Festival was selected through fan submissions in Twitter and Facebook. The Logo design competition was announced two months before the Festival week. We received around 500 logo design submissions. We shortlisted ten logos that closely aligned with the festival's theme.`,
+  para2: `The final logo design was selected by fans using social media polls. The winning design was designed and submitted by Mr.Mukesh, Adyar, Chennai.`,
+};
+
+export { aboutHeroData, logoSectionData };
