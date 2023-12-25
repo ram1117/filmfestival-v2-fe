@@ -1,4 +1,5 @@
 const moviesData = {
+  name: "Movies",
   venue: "Luxe Cinemas",
   address: "Royapettai, Chennai",
   events: [
@@ -66,6 +67,7 @@ const moviesData = {
 };
 
 const workshopData = {
+  name: "Workshops",
   venue: "MGR Film Institute",
   address: "Tharamani, Chennai",
   events: [
@@ -109,6 +111,7 @@ const workshopData = {
 };
 
 const pressmeetData = {
+  name: "Press Meetings",
   venue: "The Accord",
   address: "Teynampet, Chennai",
   events: [
@@ -133,4 +136,18 @@ const pressmeetData = {
   ],
 };
 
-export { moviesData, workshopData, pressmeetData };
+const awardsData = {
+  name: "Awards Ceremony",
+  venue: "Nehru Stadium",
+  address: "Periyamet, Chennai",
+  events: [
+    {
+      id: 1,
+      title: "Awards Ceremony",
+      time: ["20.11.23 04.00 PM"],
+      location: "Indoor Stadium",
+    },
+  ],
+};
+
+export { moviesData, workshopData, pressmeetData, awardsData };

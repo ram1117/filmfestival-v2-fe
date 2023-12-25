@@ -18,7 +18,7 @@ const RadioSelection = ({
   };
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 text-sm lg:text-lg gap-1 lg:gap-4 w-11/12 lg:w-3/4 max-w-[1248px] p-1 lg:p-2">
+    <div className="grid grid-cols-2 md:grid-cols-4 text-sm lg:text-lg gap-1 lg:gap-4 w-11/12 lg:w-3/4 max-w-[1248px] p-1 lg:p-2 my-4">
       <div className="flex gap-2 items-center">
         <input
           className="accent-custom-red h-4 w-4 lg:h-5 lg:w-5"
