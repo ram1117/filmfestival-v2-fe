@@ -9,7 +9,6 @@ const navItemsData = [
   { id: 1, title: "About", link: "/about" },
   { id: 2, title: "Schedule", link: "/schedule" },
   { id: 3, title: "Venues", link: "/venues" },
-  { id: 4, title: "Partners", link: "/partners" },
 ];
 
 const NavList = ({ className }: NavListProps) => (
