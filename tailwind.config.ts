@@ -16,6 +16,12 @@ const config: Config = {
         "main-bg": "url('/images/main-page-bg.svg')",
         "cross-bg": "url('/icons/cross-icon-1.svg')",
         "jury-tile-bg": "url('/images/jury/checkered-box-light.svg')",
+        "about-bg": "url('/images/about-page-bg.svg')",
+        "past-event-1": "url('/images/festival-bg-1.svg')",
+        "past-event-2": "url('/images/festival-bg-2.svg')",
+      },
+      backgroundColor: {
+        "bg-color-primary": "#f7f7f7",
       },
       fontSize: {
         xxs: "0.6rem",
