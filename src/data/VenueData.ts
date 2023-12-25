@@ -8,7 +8,7 @@ const venuesData = [
     alt: "Movie theatre image",
     link: "/reserve",
     linkText: "Book Tickets",
-    address: ``,
+    address: `Royapettai`,
     city: "Chennai",
   },
   {
@@ -20,7 +20,7 @@ const venuesData = [
     alt: "MGR film institute image",
     link: "/reserve",
     linkText: "Book a Spot",
-    address: ``,
+    address: `Tharamani`,
     city: "Chennai",
   },
   {
@@ -32,7 +32,7 @@ const venuesData = [
     alt: "Hotel Image",
     link: "/schedule",
     linkText: "Check Schedule",
-    address: ``,
+    address: `Teynampet`,
     city: "Chennai",
   },
   {
@@ -44,7 +44,7 @@ const venuesData = [
     alt: "Indoor Stadium image",
     link: "/reserve",
     linkText: "Book Tickets",
-    address: ``,
+    address: `Periyamet`,
     city: "Chennai",
   },
 ];

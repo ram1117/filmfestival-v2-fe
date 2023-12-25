@@ -19,13 +19,13 @@ interface VenueItemProps {
 const imageSize = "h-60 sm:h-80 w-full lg:h-full lg:w-full";
 
 const VenueItem = ({ venueData }: VenueItemProps) => (
-  <li className="flex flex-col lg:flex-row gap-4 border p-4 rounded-xl">
+  <li className="flex flex-col lg:flex-row gap-4 border p-4 rounded-xl shadow-md shadow-slate-200">
     <div className="w-full lg:w-1/3 lg:max-w-[250px]">
       <ImageWrapper
         src={venueData.imgSrc}
         alt={venueData.alt}
         imageSize={imageSize}
-        sizes="40vw"
+        sizes="(min-width: 768px) 90vw, 40vw"
         className="rounded-xl"
       />
     </div>
@@ -37,13 +37,16 @@ const VenueItem = ({ venueData }: VenueItemProps) => (
       </h4>
       <h4 className="text-sm lg:text-base">{venueData.description}</h4>
       {venueData.link && (
-        <Link href={venueData.link}>
-          <div className="w-full flex justify-end items-center my-2 lg:my-4">
+        <div className="w-full flex justify-between items-center my-2 lg:my-4">
+          <h6 className="font-light">
+            {venueData.address}, {venueData.city}
+          </h6>
+          <Link href={venueData.link}>
             <h6 className="text-sm lg:text-base text-center p-1 lg:p-2 border rounded-md border-custom-red w-32 lg:w-44 bg-custom-red text-text-primary font-semibold text-xs lg:text-sm">
               {venueData.linkText}
             </h6>
-          </div>
-        </Link>
+          </Link>
+        </div>
       )}
     </div>
   </li>

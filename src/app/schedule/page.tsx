@@ -1,7 +1,11 @@
+import ScheduleSection from "@/components/schedulepage/ScheduleSection";
+import SectionHeader from "@/atoms/SectionHeader";
+
 const SchedulePage = () => (
-  <section>
-    <h1>Schedule</h1>
-  </section>
+  <main className="min-h-[90vh] py-12 flex flex-col items-center text-text-secondary bg-bg-color-primary">
+    <SectionHeader color="text-text-secondary">Events Schedule</SectionHeader>
+    <ScheduleSection />
+  </main>
 );
 
 export default SchedulePage;
