@@ -32,6 +32,15 @@ const config: Config = {
         roboto: "var(--font-roboto)",
         lato: "var(--font-lato)",
       },
+      keyframes: {
+        fadein: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
+      },
+      animation: {
+        fadein: "fadein 500ms linear forwards",
+      },
       colors: {
         "menubar-bg": "#272a31",
         "custom-red": "#ec5242",

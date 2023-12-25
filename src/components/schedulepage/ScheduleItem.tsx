@@ -5,7 +5,7 @@ interface ScheduleItemProps {
 }
 
 const ScheduleItem = ({ scheduleItem }: ScheduleItemProps) => (
-  <li className="border p-2 lg:p-4 rounded-md flex flex-col items-center shadow-md shadow-slate-200">
+  <li className="border p-2 lg:p-4 rounded-md flex flex-col items-center shadow-md shadow-slate-200 animate-fadein">
     <h2 className="text-lg lg:text-xl font-bold font-lato my-2 text-center">
       {scheduleItem.title}
     </h2>
