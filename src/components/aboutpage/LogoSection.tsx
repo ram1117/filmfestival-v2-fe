@@ -6,7 +6,7 @@ import Logo from "@public/icons/main-logo.svg";
 const LogoSection = () => (
   <section className="min-h-max lg:min-h-[50vh] flex flex-col items-center my-8">
     <SectionHeader color="text-text-secondary">Chennai 2023 Logo</SectionHeader>
-    <div className="w-11/12 md:w-3/4 max-w-[1024px] text-center text-text-secondary text-lg lg:text-xl flex flex-col gap-4">
+    <div className="w-11/12 md:w-3/4 max-w-[1024px] text-center text-text-secondary text-base flex flex-col gap-4">
       <h4>{logoSectionData.para1}</h4>
       <h4>{logoSectionData.para2}</h4>
     </div>

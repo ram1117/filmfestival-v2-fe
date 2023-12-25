@@ -10,7 +10,7 @@ const AboutHero = () => (
         {heroSectionData.title2} {heroSectionData.title3}
       </h2>
     </div>
-    <div className="border-2 text-base lg:text-xl w-11/12 lg:w-3/4 max-w-[1024px] bg-white text-text-secondary p-4 lg:p-8 text-center flex flex-col gap-4 lg:gap-8 my-4">
+    <div className="border-2 text-base w-11/12 lg:w-3/4 max-w-[1024px] bg-white text-text-secondary p-4 lg:p-8 text-center flex flex-col gap-4 lg:gap-8 my-4">
       <h6>{aboutHeroData.para1}</h6>
       <h6>{aboutHeroData.para2}</h6>
       <h6>{aboutHeroData.para3}</h6>

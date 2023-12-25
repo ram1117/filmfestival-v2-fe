@@ -4,7 +4,7 @@ import Link from "next/link";
 const PastEventsSection = () => (
   <section className="min-h-max lg:min-h-[50vh] py-12 flex flex-col bg-bg-color-primary items-center text-text-secondary">
     <SectionHeader color="text-text-secondary">Past Events</SectionHeader>
-    <h3 className="text-lg lg:text-xl">
+    <h3 className="text-base w-11/12 text-center">
       Our previous two editions of the Film Festival took place in 2018 and 2019
     </h3>
     <div className="grid grid-cols-1 md:grid-cols-2 w-11/12 lg:w-3/4 max-w-[1024px] gap-4 lg:gap-8 text-text-primary text-lato my-12">
