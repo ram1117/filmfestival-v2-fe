@@ -48,6 +48,7 @@ const config: Config = {
         "text-secondary": "#272a31",
         "text-light": "#a4abba",
         "gray-dark": "#272a31",
+        "gray-light": "#acadb1",
         "program-tile-bg": "#494a4c",
       },
     },

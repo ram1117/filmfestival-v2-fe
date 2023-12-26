@@ -1,39 +1,51 @@
 const scheduleData = [
   {
-    "16 Nov": [
+    date: "16 Nov",
+    events: [
       {
-        "10:00 AM": [
+        time: "10:00 AM",
+        list: [
           {
             id: 1,
             title: "Woman Of",
             description: "Drama written and directed by Michal Englert",
-            eventColorCode: "#8da4ce",
+            eventColorCode: "#eceff4",
+            icon: "/icons/events/icon-screen-dark.svg",
             venue: "Luxe Screen 1",
           },
         ],
-        "02:00 PM": [
+      },
+      {
+        time: "02:00 PM",
+        list: [
           {
             id: 2,
             title: "Cinematography and Stills",
             description:
               "Workshop by cinematographer and director Priyadarshan",
-            eventColorCode: "#ef5d48",
+            eventColorCode: "#fee1d9",
+            icon: "/icons/events/icon-camera-dark.svg",
             venue: "MGR Institute Lecture Hall 2",
           },
           {
             id: 3,
             title: "Sanaa",
             description: "2022 drama written and directed by Sudhanshu Saria",
-            eventColorCode: "#8da4ce",
+            eventColorCode: "#eceff4",
+            icon: "/icons/events/icon-screen-dark.svg",
             venue: "Luxe Screen 1",
           },
         ],
-        "06:00 PM": [
+      },
+      {
+        time: "06:00 PM",
+        list: [
           {
             id: 4,
             title: "Pookkaalam",
             description: "2023 romantic drama directed by Ganesh Raj",
-            eventColorCode: "#8da4ce",
+            eventColorCode: "#eceff4",
+            icon: "/icons/events/icon-screen-dark.svg",
             venue: "Luxe Screen 3",
           },
         ],
@@ -41,40 +53,52 @@ const scheduleData = [
     ],
   },
   {
-    "17 Nov": [
+    date: "17 Nov",
+    events: [
       {
-        "10:00 AM": [
+        time: "10:00 AM",
+        list: [
           {
             id: 1,
             title: "The Other Widow",
             description: "Mystery thriller directed by Maayan Rypp",
-            eventColorCode: "#8da4ce",
+            eventColorCode: "#eceff4",
+            icon: "/icons/events/icon-screen-dark.svg",
             venue: "Luxe Screen 1",
           },
         ],
-        "02:00 PM": [
+      },
+      {
+        time: "02:00 PM",
+        list: [
           {
             id: 3,
             title: "Party Of Fools",
             description: "Drama written and directed by Michal Englert",
-            eventColorCode: "#8da4ce",
+            eventColorCode: "#eceff4",
+            icon: "/icons/events/icon-screen-dark.svg",
             venue: "Luxe Screen 5",
           },
           {
             id: 2,
             title: "Makeup",
             description: "Workshop by veteran makeup-artist K. M. Sarathkumar",
-            eventColorCode: "#ef5d48",
+            eventColorCode: "#fee1d9",
+            icon: "/icons/events/icon-camera-dark.svg",
             venue: "MGR Institute Lecture Hall 2",
           },
         ],
-        "06:00 PM": [
+      },
+      {
+        time: "06:00 PM",
+        list: [
           {
             id: 4,
             title: "Neela Nira Sooriyan",
             description:
               "Tamil Drama written and directed by Samyuktha Vijayan",
-            eventColorCode: "#8da4ce",
+            eventColorCode: "#eceff4",
+            icon: "/icons/events/icon-screen-dark.svg",
             venue: "Luxe Screen 3",
           },
         ],
@@ -82,47 +106,60 @@ const scheduleData = [
     ],
   },
   {
-    "18 Nov": [
+    date: "18 Nov",
+    events: [
       {
-        "10:00 AM": [
+        time: "10:00 AM",
+        list: [
           {
             id: 1,
             title: "Measures Of Men",
             description: "2023 German drama film directed by Lars Kraume",
-            eventColorCode: "#8da4ce",
+            eventColorCode: "#eceff4",
+            icon: "/icons/events/icon-screen-dark.svg",
             venue: "Luxe Screen 2",
           },
         ],
-        "02:00 PM": [
+      },
+      {
+        time: "02:00 PM",
+        list: [
           {
             id: 2,
             title: "Measures Of Men",
             description: "2023 German drama film directed by Lars Kraume",
-            eventColorCode: "#8da4ce",
+            eventColorCode: "#eceff4",
+            icon: "/icons/events/icon-screen-dark.svg",
             venue: "Luxe Screen 2",
           },
           {
             id: 3,
             title: "Acting and Comedy",
             description: "Workshop by veteran actor Naasar",
-            eventColorCode: "#ef5d48",
+            eventColorCode: "#fee1d9",
+            icon: "/icons/events/icon-camera-dark.svg",
             venue: "MGR Institute Lecture Hall 2",
           },
         ],
-        "06:00 PM": [
+      },
+      {
+        time: "06:00 PM",
+        list: [
           {
             id: 4,
             title: "Lubo",
             description:
               "2023 Italian-Swiss drama film directed by Giorgio Diritti",
-            eventColorCode: "#8da4ce",
+            eventColorCode: "#eceff4",
+            icon: "/icons/events/icon-screen-dark.svg",
             venue: "Luxe Screen 1",
           },
           {
             id: 6,
             title: "Press Meet",
             description: "International Entries Press Meet",
-            eventColorCode: "#afadde",
+            eventColorCode: "#dfdff9",
+            icon: "/icons/events/icon-press-dark.svg",
             venue: "Banquet Hall, The Accord",
           },
         ],
@@ -130,40 +167,52 @@ const scheduleData = [
     ],
   },
   {
-    "19 Nov": [
+    date: "19 Nov",
+    events: [
       {
-        "10:00 AM": [
+        time: "10:00 AM",
+        list: [
           {
             id: 5,
             title: "Aattam",
             description:
               "Malayalam movie written and directed by Anand Ekarshi",
-            eventColorCode: "#8da4ce",
+            eventColorCode: "#eceff4",
+            icon: "/icons/events/icon-screen-dark.svg",
             venue: "Luxe Screen 7",
           },
         ],
-        "02:00 PM": [
+      },
+      {
+        time: "02:00 PM",
+        list: [
           {
             id: 6,
             title: "Press Meet",
             description: "Indian Entries Press Meet",
-            eventColorCode: "#afadde",
+            eventColorCode: "#dfdff9",
+            icon: "/icons/events/icon-press-dark.svg",
             venue: "Banquet Hall, The Accord",
           },
           {
             id: 4,
             title: "Makeup",
             description: "Workshop by veteran makeup-artist K. M. Sarathkumar",
-            eventColorCode: "#ef5d48",
+            eventColorCode: "#fee1d9",
+            icon: "/icons/events/icon-camera-dark.svg",
             venue: "MGR Institute Lecture Hall 2",
           },
         ],
-        "06:00 PM": [
+      },
+      {
+        time: "06:00 PM",
+        list: [
           {
             id: 6,
             title: "Press Meet",
             description: "Indian Entries Press Meet",
-            eventColorCode: "#afadde",
+            eventColorCode: "#dfdff9",
+            icon: "/icons/events/icon-press-dark.svg",
             venue: "Banquet Hall, The Accord",
           },
         ],
@@ -171,22 +220,52 @@ const scheduleData = [
     ],
   },
   {
-    "20 Nov": [
+    date: "20 Nov",
+    events: [
+      { time: "10:00 AM", list: [] },
+      { time: "02:00 PM", list: [] },
       {
-        "10:00 AM": [],
-        "02:00 PM": [],
-        "06:00 PM": [
+        time: "06:00 PM",
+        list: [
           {
             id: 4,
             title: "Awards Ceremony",
             description:
               "Awards Ceremony for winning entries, special awards and Life Time Achievement award",
-            eventColorCode: "##98ddd9",
+            eventColorCode: "#d8f1ee",
+            icon: "/icons/events/icon-medal-dark.svg",
             venue: "Nehru Indoor Stadium, Chennai",
           },
         ],
       },
     ],
+  },
+];
+
+export const scheduleLegendData = [
+  {
+    id: 1,
+    name: "Screening",
+    icon: "/icons/events/icon-screen-dark.svg",
+    alt: "movie icon",
+  },
+  {
+    id: 2,
+    name: "Workshop",
+    icon: "/icons/events/icon-camera-dark.svg",
+    alt: "workshop icon",
+  },
+  {
+    id: 3,
+    name: "Press Meet",
+    icon: "/icons/events/icon-press-dark.svg",
+    alt: "press icon",
+  },
+  {
+    id: 4,
+    name: "Awards",
+    icon: "/icons/events/icon-medal-dark.svg",
+    alt: "awards icon",
   },
 ];
 

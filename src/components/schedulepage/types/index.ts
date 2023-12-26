@@ -1,13 +1,8 @@
 export interface ScheduleItemType {
-  id: number;
-  title: string;
-  time: string[];
-  location: string;
+  [key: string]: number | string;
 }
 
-export interface ScheduleDataType {
-  name: string;
-  venue: string;
-  address: string;
-  events: ScheduleItemType[];
+export interface ScheduleItemsType {
+  time: string;
+  list: ScheduleItemType[];
 }
