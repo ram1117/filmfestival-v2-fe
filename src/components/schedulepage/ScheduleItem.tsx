@@ -1,24 +1,28 @@
+import ImageWrapper from "@/atoms/ImageWrapper";
 import { ScheduleItemType } from "./types";
 
 interface ScheduleItemProps {
-  scheduleItem: ScheduleItemType;
+  item: ScheduleItemType;
 }
 
-const ScheduleItem = ({ scheduleItem }: ScheduleItemProps) => (
-  <li className="border p-2 lg:p-4 rounded-md flex flex-col items-center shadow-md shadow-slate-200 animate-fadein">
-    <h2 className="text-lg lg:text-xl font-bold font-lato my-2 text-center">
-      {scheduleItem.title}
-    </h2>
-    <h3 className="font-md text-sm lg:text-base my-2 italic">
-      {scheduleItem.location}
-    </h3>
-    <ul className="flex flex-col my-2 font-light">
-      {scheduleItem.time.map((item) => (
-        <li key={item}>
-          <h3 className="text-sm lg:text-base">{item}</h3>
-        </li>
-      ))}
-    </ul>
+const ScheduleItem = ({ item }: ScheduleItemProps) => (
+  <li
+    className="p-4 rounded-lg flex flex-col gap-1 md:gap-4"
+    style={{ background: `${item.eventColorCode}` }}
+  >
+    <div className="flex gap-2 lg:gap-4 items-center">
+      <ImageWrapper
+        src={item.icon as string}
+        alt="Event Icon"
+        imageSize="h-4 w-4 lg:h-5 lg:w-5"
+      />
+      <h4 className="text-lg lg:text-xl font-bold font-roboto-condensed">
+        {item.title}
+      </h4>
+    </div>
+
+    <h5 className="text-sm lg:text-base">{item.description}</h5>
+    <h5 className="text-sm lg:text-base italic">{item.venue}</h5>
   </li>
 );
 

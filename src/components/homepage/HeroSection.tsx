@@ -11,7 +11,7 @@ const HeroSection = () => (
       <h2 className="text-clip">{heroSectionData.title3}</h2>
     </div>
 
-    <h4 className="border-2 w-3/4 p-2 lg:w-1/2 my-2 lg:my-6 text-sm lg:text-lg font-md rounded-md">
+    <h4 className="border-2 w-3/4 p-2 lg:w-1/2 my-2 lg:my-6 text-sm lg:text-lg font-md rounded-md bg-bg-color-primary">
       {heroSectionData.description}
     </h4>
 
