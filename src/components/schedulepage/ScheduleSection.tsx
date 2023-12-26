@@ -1,25 +1,25 @@
 "use client";
 
 import { useState } from "react";
-import RadioSelection from "./RadioSelection";
-import ScheduleWrapper from "./ScheduleWrapper";
-import {
-  moviesData,
-  workshopData,
-  pressmeetData,
-  awardsData,
-} from "@/data/ScheduleData";
+import ScheduleMenu from "./ScheduleMenu";
+// import ScheduleWrapper from "./ScheduleWrapper";
+import scheduleData from "@/data/ScheduleData";
 
 const ScheduleSection = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const scheduleList = [moviesData, workshopData, pressmeetData, awardsData];
+  // const scheduleList = [moviesData, workshopData, pressmeetData, awardsData];
+  const dateSet = new Set<string>([]);
+  scheduleData.forEach((item) => dateSet.add(Object.keys(item)[0]));
+  const dateOptions = Array.from(dateSet);
+
   return (
     <section className="flex flex-col items-center w-full">
-      <RadioSelection
+      <ScheduleMenu
+        dateOptions={dateOptions}
         activeIndex={activeIndex}
         setActiveIndex={setActiveIndex}
       />
-      <ScheduleWrapper schedules={scheduleList[activeIndex]} />
+      {/* <ScheduleWrapper schedules={scheduleList[activeIndex]} /> */}
     </section>
   );
 };

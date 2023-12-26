@@ -1,153 +1,193 @@
-const moviesData = {
-  name: "Movies",
-  venue: "Luxe Cinemas",
-  address: "Royapettai, Chennai",
-  events: [
-    {
-      id: 1,
-      title: "Woman Of",
-      time: ["14.11.23 2.30PM", "14.11.23 6.30PM"],
-      location: "Luxe Screen 1",
-    },
-    {
-      id: 2,
-      title: "The Other Widow",
-      time: ["15.11.23 2.30PM", "15.11.23 6.30PM"],
-      location: "Luxe Screen 2",
-    },
-    {
-      id: 3,
-      title: "Party Of Fools ",
-      time: ["16.11.23 2.30PM", "16.11.23 6.30PM"],
-      location: "Luxe Screen 3",
-    },
-    {
-      id: 4,
-      title: "Measures Of Men ",
-      time: ["17.11.23 2.30PM", "17.11.23 6.30PM"],
-      location: "Luxe Screen 4",
-    },
-    {
-      id: 5,
-      title: "Lubo",
-      time: ["18.11.23 2.30PM", "18.11.23 6.30PM"],
-      location: "Luxe Screen 5",
-    },
-    {
-      id: 6,
-      title: "Die Before Death ",
-      time: ["19.11.23 2.30PM", "19.11.23 6.30PM"],
-      location: "Luxe Screen 6",
-    },
-    {
-      id: 7,
-      title: "Aattam",
-      time: ["20.11.23 2.30PM", "20.11.23 6.30PM"],
-      location: "Luxe Screen 7",
-    },
-    {
-      id: 8,
-      title: "Neela Nira Sooriyan",
-      time: ["14.11.23 2.30PM", "14.11.23 8.30PM"],
-      location: "Luxe Screen 8",
-    },
-    {
-      id: 9,
-      title: "Pookkaalam",
-      time: ["15.11.23 6.30PM", "15.11.23 8.30PM"],
-      location: "Luxe Screen 9",
-    },
-    {
-      id: 10,
-      title: "Sanaa",
-      time: ["16.11.23 6.30PM", "16.11.23 8.30PM"],
-      location: "Luxe Screen 10",
-    },
-  ],
-};
+const scheduleData = [
+  {
+    "16 Nov": [
+      {
+        "10:00 AM": [
+          {
+            id: 1,
+            title: "Woman Of",
+            description: "Drama written and directed by Michal Englert",
+            eventColorCode: "#8da4ce",
+            venue: "Luxe Screen 1",
+          },
+        ],
+        "02:00 PM": [
+          {
+            id: 2,
+            title: "Cinematography and Stills",
+            description:
+              "Workshop by cinematographer and director Priyadarshan",
+            eventColorCode: "#ef5d48",
+            venue: "MGR Institute Lecture Hall 2",
+          },
+          {
+            id: 3,
+            title: "Sanaa",
+            description: "2022 drama written and directed by Sudhanshu Saria",
+            eventColorCode: "#8da4ce",
+            venue: "Luxe Screen 1",
+          },
+        ],
+        "06:00 PM": [
+          {
+            id: 4,
+            title: "Pookkaalam",
+            description: "2023 romantic drama directed by Ganesh Raj",
+            eventColorCode: "#8da4ce",
+            venue: "Luxe Screen 3",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    "17 Nov": [
+      {
+        "10:00 AM": [
+          {
+            id: 1,
+            title: "The Other Widow",
+            description: "Mystery thriller directed by Maayan Rypp",
+            eventColorCode: "#8da4ce",
+            venue: "Luxe Screen 1",
+          },
+        ],
+        "02:00 PM": [
+          {
+            id: 3,
+            title: "Party Of Fools",
+            description: "Drama written and directed by Michal Englert",
+            eventColorCode: "#8da4ce",
+            venue: "Luxe Screen 5",
+          },
+          {
+            id: 2,
+            title: "Makeup",
+            description: "Workshop by veteran makeup-artist K. M. Sarathkumar",
+            eventColorCode: "#ef5d48",
+            venue: "MGR Institute Lecture Hall 2",
+          },
+        ],
+        "06:00 PM": [
+          {
+            id: 4,
+            title: "Neela Nira Sooriyan",
+            description:
+              "Tamil Drama written and directed by Samyuktha Vijayan",
+            eventColorCode: "#8da4ce",
+            venue: "Luxe Screen 3",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    "18 Nov": [
+      {
+        "10:00 AM": [
+          {
+            id: 1,
+            title: "Measures Of Men",
+            description: "2023 German drama film directed by Lars Kraume",
+            eventColorCode: "#8da4ce",
+            venue: "Luxe Screen 2",
+          },
+        ],
+        "02:00 PM": [
+          {
+            id: 2,
+            title: "Measures Of Men",
+            description: "2023 German drama film directed by Lars Kraume",
+            eventColorCode: "#8da4ce",
+            venue: "Luxe Screen 2",
+          },
+          {
+            id: 3,
+            title: "Acting and Comedy",
+            description: "Workshop by veteran actor Naasar",
+            eventColorCode: "#ef5d48",
+            venue: "MGR Institute Lecture Hall 2",
+          },
+        ],
+        "06:00 PM": [
+          {
+            id: 4,
+            title: "Lubo",
+            description:
+              "2023 Italian-Swiss drama film directed by Giorgio Diritti",
+            eventColorCode: "#8da4ce",
+            venue: "Luxe Screen 1",
+          },
+          {
+            id: 6,
+            title: "Press Meet",
+            description: "International Entries Press Meet",
+            eventColorCode: "#afadde",
+            venue: "Banquet Hall, The Accord",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    "19 Nov": [
+      {
+        "10:00 AM": [
+          {
+            id: 5,
+            title: "Aattam",
+            description:
+              "Malayalam movie written and directed by Anand Ekarshi",
+            eventColorCode: "#8da4ce",
+            venue: "Luxe Screen 7",
+          },
+        ],
+        "02:00 PM": [
+          {
+            id: 6,
+            title: "Press Meet",
+            description: "Indian Entries Press Meet",
+            eventColorCode: "#afadde",
+            venue: "Banquet Hall, The Accord",
+          },
+          {
+            id: 4,
+            title: "Makeup",
+            description: "Workshop by veteran makeup-artist K. M. Sarathkumar",
+            eventColorCode: "#ef5d48",
+            venue: "MGR Institute Lecture Hall 2",
+          },
+        ],
+        "06:00 PM": [
+          {
+            id: 6,
+            title: "Press Meet",
+            description: "Indian Entries Press Meet",
+            eventColorCode: "#afadde",
+            venue: "Banquet Hall, The Accord",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    "20 Nov": [
+      {
+        "10:00 AM": [],
+        "02:00 PM": [],
+        "06:00 PM": [
+          {
+            id: 4,
+            title: "Awards Ceremony",
+            description:
+              "Awards Ceremony for winning entries, special awards and Life Time Achievement award",
+            eventColorCode: "##98ddd9",
+            venue: "Nehru Indoor Stadium, Chennai",
+          },
+        ],
+      },
+    ],
+  },
+];
 
-const workshopData = {
-  name: "Workshops",
-  venue: "MGR Film Institute",
-  address: "Tharamani, Chennai",
-  events: [
-    {
-      id: 1,
-      title: "Cinematography and Stills",
-      time: ["14.11.23 10.30 AM"],
-      location: "Lecture Hall 1",
-    },
-    {
-      id: 2,
-      title: "Makeup",
-      time: ["15.11.23 10.30 AM"],
-      location: "Lecture Hall 2",
-    },
-    {
-      id: 3,
-      title: "Acting and Comedy",
-      time: ["16.11.23 10.30 AM"],
-      location: "Lecture Hall 1",
-    },
-    {
-      id: 4,
-      title: "Cinematography and Stills",
-      time: ["17.11.23 10.30 AM"],
-      location: "Lecture Hall 1",
-    },
-    {
-      id: 5,
-      title: "Makeup",
-      time: ["18.11.23 10.30 AM"],
-      location: "Lecture Hall 2",
-    },
-    {
-      id: 6,
-      title: "Acting and Comedy",
-      time: ["19.11.23 10.30 AM"],
-      location: "Lecture Hall 2",
-    },
-  ],
-};
-
-const pressmeetData = {
-  name: "Press Meetings",
-  venue: "The Accord",
-  address: "Teynampet, Chennai",
-  events: [
-    {
-      id: 1,
-      title: "International Entries Press Meet",
-      time: ["17.11.23 04.00 PM"],
-      location: "Banquet Hall",
-    },
-    {
-      id: 2,
-      title: "Indian Entries Press Meet",
-      time: ["18.11.23 04.00 PM"],
-      location: "Banquet Hall",
-    },
-    {
-      id: 3,
-      title: "The Jury Press Meet",
-      time: ["19.11.23 04.00 PM"],
-      location: "Banquet Hall",
-    },
-  ],
-};
-
-const awardsData = {
-  name: "Awards Ceremony",
-  venue: "Nehru Stadium",
-  address: "Periyamet, Chennai",
-  events: [
-    {
-      id: 1,
-      title: "Awards Ceremony",
-      time: ["20.11.23 04.00 PM"],
-      location: "Indoor Stadium",
-    },
-  ],
-};
-
-export { moviesData, workshopData, pressmeetData, awardsData };
+export default scheduleData;
