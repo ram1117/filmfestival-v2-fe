@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import ScheduleMenu from "./ScheduleMenu";
+import ScheduleLegend from "./ScheduleLegend";
 import ScheduleRow from "./ScheduleRow";
 import scheduleData from "@/data/ScheduleData";
 
@@ -18,6 +19,7 @@ const ScheduleSection = () => {
         activeIndex={activeIndex}
         setActiveIndex={setActiveIndex}
       />
+      <ScheduleLegend />
       <ul className="w-11/12 lg:w-3/4 max-w-[1248px]">
         {scheduleData[activeIndex].events.map((event) => (
           <ScheduleRow schedule={event} key={event.time} />

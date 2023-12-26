@@ -247,24 +247,28 @@ export const scheduleLegendData = [
     id: 1,
     name: "Screening",
     icon: "/icons/events/icon-screen-dark.svg",
+    eventColorCode: "#eceff4",
     alt: "movie icon",
   },
   {
     id: 2,
     name: "Workshop",
     icon: "/icons/events/icon-camera-dark.svg",
+    eventColorCode: "#fee1d9",
     alt: "workshop icon",
   },
   {
     id: 3,
     name: "Press Meet",
     icon: "/icons/events/icon-press-dark.svg",
+    eventColorCode: "#dfdff9",
     alt: "press icon",
   },
   {
     id: 4,
     name: "Awards",
     icon: "/icons/events/icon-medal-dark.svg",
+    eventColorCode: "#d8f1ee",
     alt: "awards icon",
   },
 ];

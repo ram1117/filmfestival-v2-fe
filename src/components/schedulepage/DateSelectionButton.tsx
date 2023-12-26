@@ -17,14 +17,14 @@ const DateSelectionButton = ({
 
   const activeStyle =
     activeIndex === index
-      ? "text-custom-red font-semibold lg:font-bold bg-custom-red text-text-primary"
-      : "border-custom-red";
+      ? "text-custom-red font-black bg-custom-red text-text-primary"
+      : "bg-button-light";
 
   return (
     <button
       type="button"
       onClick={() => handleChange(index)}
-      className={`${activeStyle} border rounded-md px-2 lg:px-6 py-1`}
+      className={`${activeStyle} border rounded-md p-2 lg:p-4`}
     >
       {title}
     </button>
