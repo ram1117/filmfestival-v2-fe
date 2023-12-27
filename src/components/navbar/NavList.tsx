@@ -16,9 +16,11 @@ const NavList = ({ className }: NavListProps) => (
     {navItemsData.map((item) => (
       <NavListItem linkData={item} key={item.id} />
     ))}
-    <li className="p-2 bg-custom-red rounded-md text-text-primary hover:bg-text-primary hover:text-custom-red border-2 border-custom-red">
-      <Link href="/reserve">Reserve</Link>
-    </li>
+    <Link href="/reserve">
+      <li className="p-2 text-text-primary border-2 border-custom-red bg-custom-red ">
+        Tickets
+      </li>
+    </Link>
   </ul>
 );
 

@@ -9,3 +9,26 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+.striped-border {
+  border: 3px solid #ec5242;
+  border-image: repeating-linear-gradient(
+      135deg,
+      #ec5242,
+      #ec5242 10px,
+      #fbfbfb 10px,
+      #272a31 20px
+    )
+    10;
+}
+
+input[type="number"] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}

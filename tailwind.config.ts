@@ -44,6 +44,7 @@ const config: Config = {
       colors: {
         "menubar-bg": "#272a31",
         "custom-red": "#ec5242",
+        "custom-red-light": "#fee1d9",
         "text-primary": "#fbfbfb",
         "text-secondary": "#272a31",
         "text-light": "#a4abba",
