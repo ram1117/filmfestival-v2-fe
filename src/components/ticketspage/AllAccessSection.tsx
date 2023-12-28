@@ -1,7 +1,7 @@
 "use client";
 
 import { allAccessData, allAccessInfo } from "@/data/TicketsData";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import AllAccessItem from "./AllAccessItem";
 import ImageWrapper from "@/atoms/ImageWrapper";
 import PlusIcon from "@public/icons/icon-plus.svg";
@@ -17,6 +17,10 @@ const AllAccessSection = () => {
   const handlePlus = () => {
     if (quantity < 10) setQuantity((prev) => prev + 1);
   };
+
+  useEffect(() => {
+    setQuantity(0);
+  }, [activeSelection]);
 
   return (
     <section className="w-11/12 lg:w-3/4 max-w-[1248px] flex flex-col items-center striped-border p-4 lg:p-8">
@@ -38,6 +42,7 @@ const AllAccessSection = () => {
               className="p-1 px-4 rounded-md border-2"
               type="button"
               onClick={handleMinus}
+              disabled={quantity === 0}
             >
               <ImageWrapper
                 src={MinusIcon}
@@ -57,6 +62,7 @@ const AllAccessSection = () => {
               className="p-1 px-4 rounded-md border-2"
               type="button"
               onClick={handlePlus}
+              disabled={quantity === 10 || activeSelection === 0}
             >
               <ImageWrapper
                 src={PlusIcon}
@@ -68,12 +74,13 @@ const AllAccessSection = () => {
         </div>
         <button
           type="button"
-          className="bg-custom-red text-text-primary font-bild py-2 px-12 text-sm lg:text-base font-bold"
+          className="bg-custom-red text-text-primary font-bild py-2 px-12 text-sm lg:text-base font-bold disabled:opacity-50"
+          disabled={quantity === 0 || activeSelection === 0}
         >
           Buy
         </button>
       </div>
-      <ul className="w-full text-xs md:text-sm list-disc list-inside my-4 lg:my-8">
+      <ul className="w-full text-xs md:text-sm list-disc list-inside my-4 lg:my-8 md:hidden">
         {allAccessInfo.map((item) => (
           <li key={item.id}>{item.detail}</li>
         ))}

@@ -24,16 +24,21 @@ const AllAccessItem = ({
         className="font-lato flex flex-col items-center gap-2 lg:gap-4 w-full h-full py-4 lg:py-8"
       >
         <h4 className="text-sm lg:text-lg font-bold">{item.name}</h4>
+
         <h4 className="text-sm lg:text-lg font-semibold text-custom-red">
           ₹ {item.price}
         </h4>
+
         <input
           type="radio"
           checked={activeSelection === item.id}
           id={`access-item-${item.id}`}
           onChange={() => setActvieSelection(item.id as number)}
-          className={`h-3 w-3 lg:h-5 lg:w-5 ${activeRadioStyle}`}
+          className={`h-4 w-4 lg:h-5 lg:w-5 ${activeRadioStyle}`}
         />
+        <h5 className="w-11/12 md:w-2/3 text-center text-xxs md:text-sm hidden md:block">
+          {item.detail}
+        </h5>
       </label>
     </li>
   );
