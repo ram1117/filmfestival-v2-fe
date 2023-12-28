@@ -13,11 +13,11 @@ const AllAccessItem = ({
     activeSelection === item.id ? "accent-custom-red" : "accent-gray-dark";
 
   const activeBg =
-    activeSelection === item.id ? "bg-custom-red-light" : "bg-none";
+    activeSelection === item.id ? "bg-custom-red-light scale-105" : "bg-none";
 
   return (
     <li
-      className={`flex gap-1 lg:gap-4 flex-col items-center border rounded-lg ${activeBg}`}
+      className={`flex gap-1 lg:gap-4 flex-col items-center border rounded-lg ${activeBg} shadow-custom`}
     >
       <label
         htmlFor={`access-item-${item.id}`}

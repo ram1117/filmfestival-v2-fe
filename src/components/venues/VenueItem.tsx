@@ -19,7 +19,7 @@ interface VenueItemProps {
 const imageSize = "h-60 sm:h-80 w-full lg:h-full lg:w-full";
 
 const VenueItem = ({ venueData }: VenueItemProps) => (
-  <li className="flex flex-col lg:flex-row gap-4 border p-4 rounded-xl shadow-md shadow-slate-200">
+  <li className="flex flex-col lg:flex-row gap-4 border p-4 rounded-xl shadow-custom">
     <div className="w-full lg:w-1/3 lg:max-w-[250px]">
       <ImageWrapper
         src={venueData.imgSrc}

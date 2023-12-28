@@ -7,7 +7,7 @@ interface ScheduleItemProps {
 
 const ScheduleItem = ({ item }: ScheduleItemProps) => (
   <li
-    className="p-4 rounded-lg flex flex-col gap-1 md:gap-4"
+    className="p-4 rounded-lg flex flex-col gap-1 md:gap-4 border shadow-custom"
     style={{ background: `${item.eventColorCode}` }}
   >
     <div className="flex gap-2 lg:gap-4 items-center">

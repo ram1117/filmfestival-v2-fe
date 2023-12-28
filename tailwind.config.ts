@@ -23,6 +23,10 @@ const config: Config = {
       backgroundColor: {
         "bg-color-primary": "#f7f7f7",
       },
+      boxShadow: {
+        "custom-light": "0 4px 6px -1px #e2e8f0, 0 2px 4px -2px #e2e8f0",
+        custom: "0 4px 6px -1px #cbd5e1, 0 2px 4px -2px #cbd5e1",
+      },
       fontSize: {
         xxs: "0.6rem",
       },
