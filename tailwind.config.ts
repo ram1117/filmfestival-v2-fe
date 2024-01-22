@@ -23,6 +23,10 @@ const config: Config = {
       backgroundColor: {
         "bg-color-primary": "#f7f7f7",
       },
+      boxShadow: {
+        "custom-light": "0 4px 6px -1px #e2e8f0, 0 2px 4px -2px #e2e8f0",
+        custom: "0 4px 6px -1px #cbd5e1, 0 2px 4px -2px #cbd5e1",
+      },
       fontSize: {
         xxs: "0.6rem",
       },
@@ -44,6 +48,7 @@ const config: Config = {
       colors: {
         "menubar-bg": "#272a31",
         "custom-red": "#ec5242",
+        "custom-red-light": "#fee1d9",
         "text-primary": "#fbfbfb",
         "text-secondary": "#272a31",
         "text-light": "#a4abba",
