@@ -1,0 +1,33 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = process.env("DATABASE_URL")
+}
+
+model Event {
+  id String @id @default(Chennaiuid())
+  title String
+  venue String
+  description String
+  icon String
+  iconAlt String
+  totalSeats Int
+  price Float
+  startTime DateTime
+}
+
+model Reservation {
+  id String @id @default(cuid())
+  eventId String
+  userId String
+  seats Int 
+  price Float
+  event Event @relation(fields:[eventId],references:[id],onDelete:[cascade])
+  user User @relation(fields:[userId],references:[id],onDelete:[cascade])
+}
