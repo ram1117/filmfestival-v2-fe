@@ -7,27 +7,41 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = process.env("DATABASE_URL")
+  url      = env("DATABASE_URL")
 }
 
 model Event {
-  id String @id @default(Chennaiuid())
-  title String
-  venue String
+  id          String        @id @default(cuid())
+  title       String
+  venue       String
   description String
-  icon String
-  iconAlt String
-  totalSeats Int
-  price Float
-  startTime DateTime
+  eventColorCode String
+  icon        String
+  iconAlt     String
+  totalSeats  Int
+  price       Float
+  eventDate   DateTime @db.Date()
+  eventTime DateTime @db.Time(3)
+  Reservation Reservation[]
 }
 
 model Reservation {
-  id String @id @default(cuid())
-  eventId String
-  userId String
-  seats Int 
-  price Float
-  event Event @relation(fields:[eventId],references:[id],onDelete:[cascade])
-  user User @relation(fields:[userId],references:[id],onDelete:[cascade])
+  id        String   @id @default(cuid())
+  eventId   String
+  userId    String
+  seats     Int
+  price     Float
+  event     Event    @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  startDate DateTime @db.Date
+  startTime DateTime @db.Time
+}
+
+model User {
+  id           String        @id @default(cuid())
+  name         String
+  email        String
+  password     String
+  role         String        @default("user")
+  reservations Reservation[]
 }
