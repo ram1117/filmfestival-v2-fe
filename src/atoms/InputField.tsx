@@ -22,7 +22,9 @@ const InputField = ({
   readonly = false,
   required = false,
 }: InputFieldProps) => (
-  <div className={`${containerClass} flex gap-2 lg:gap-4 flex-col lg:flex-row`}>
+  <div
+    className={`${containerClass} flex gap-2 lg:gap-4 flex-col lg:flex-row my-4 lg:my-8`}
+  >
     <label htmlFor={id} className={`${labelClass}`}>
       {label}
     </label>
@@ -31,7 +33,7 @@ const InputField = ({
       name={name}
       readOnly={readonly}
       type={type}
-      className={`${inputClass} border rounded-md p-2`}
+      className={`${inputClass} border-2 rounded-md p-2`}
       required={required}
     />
   </div>

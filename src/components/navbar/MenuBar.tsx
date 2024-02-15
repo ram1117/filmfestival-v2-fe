@@ -6,7 +6,9 @@ const MenuBar = () => (
       <li>
         <Link href="/account">Account</Link>
       </li>
-      <li>Login</li>
+      <li>
+        <Link href="/authentication/signin">Sign In</Link>
+      </li>
     </ul>
   </nav>
 );

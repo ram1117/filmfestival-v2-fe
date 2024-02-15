@@ -8,7 +8,7 @@ const EventBookingForm = () => (
     <InputField
       label="Full Name"
       type="text"
-      id="fulname"
+      id="fullname"
       name="fullname"
       labelClass="w-full lg:w-1/6"
       inputClass="w-full lg:w-5/6 bg-slate-100"
