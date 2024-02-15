@@ -1,5 +1,6 @@
 import ImageWrapper from "@/atoms/ImageWrapper";
 import { Event } from "@prisma/client";
+import Link from "next/link";
 
 interface ScheduleItemProps {
   item: Event;
@@ -23,6 +24,17 @@ const ScheduleItem = ({ item }: ScheduleItemProps) => (
 
     <h5 className="text-sm lg:text-base">{item.description}</h5>
     <h5 className="text-sm lg:text-base italic">{item.venue}</h5>
+
+    <Link href={`/reserve/event/${item.id}`}>
+      <div className="w-full flex justify-end">
+        <button
+          className="text-xs lg:text-sm bg-custom-red text-white p-2 rounded-md font-bold"
+          type="button"
+        >
+          Reserve
+        </button>
+      </div>
+    </Link>
   </li>
 );
 
