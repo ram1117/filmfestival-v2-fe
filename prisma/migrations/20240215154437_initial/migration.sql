@@ -1,4 +1,12 @@
 -- CreateTable
+CREATE TABLE "Schedule" (
+    "id" TEXT NOT NULL,
+    "date" DATE NOT NULL,
+
+    CONSTRAINT "Schedule_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
 CREATE TABLE "Event" (
     "id" TEXT NOT NULL,
     "title" TEXT NOT NULL,
@@ -8,8 +16,9 @@ CREATE TABLE "Event" (
     "icon" TEXT NOT NULL,
     "iconAlt" TEXT NOT NULL,
     "totalSeats" INTEGER NOT NULL,
+    "availableSeats" INTEGER NOT NULL,
     "price" DOUBLE PRECISION NOT NULL,
-    "eventDate" DATE NOT NULL,
+    "scheduleId" TEXT NOT NULL,
     "eventTime" TIME(3) NOT NULL,
 
     CONSTRAINT "Event_pkey" PRIMARY KEY ("id")
@@ -22,8 +31,6 @@ CREATE TABLE "Reservation" (
     "userId" TEXT NOT NULL,
     "seats" INTEGER NOT NULL,
     "price" DOUBLE PRECISION NOT NULL,
-    "startDate" DATE NOT NULL,
-    "startTime" TIME NOT NULL,
 
     CONSTRAINT "Reservation_pkey" PRIMARY KEY ("id")
 );
@@ -38,6 +45,9 @@ CREATE TABLE "User" (
 
     CONSTRAINT "User_pkey" PRIMARY KEY ("id")
 );
+
+-- AddForeignKey
+ALTER TABLE "Event" ADD CONSTRAINT "Event_scheduleId_fkey" FOREIGN KEY ("scheduleId") REFERENCES "Schedule"("id") ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "Reservation" ADD CONSTRAINT "Reservation_eventId_fkey" FOREIGN KEY ("eventId") REFERENCES "Event"("id") ON DELETE CASCADE ON UPDATE CASCADE;

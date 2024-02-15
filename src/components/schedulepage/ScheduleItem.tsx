@@ -1,8 +1,8 @@
 import ImageWrapper from "@/atoms/ImageWrapper";
-import { ScheduleItemType } from "./types";
+import { Event } from "@prisma/client";
 
 interface ScheduleItemProps {
-  item: ScheduleItemType;
+  item: Event;
 }
 
 const ScheduleItem = ({ item }: ScheduleItemProps) => (

@@ -141,7 +141,7 @@ export const eventsData = [
     eventColorCode: "#dfdff9",
     icon: "/icons/events/icon-press-dark.svg",
     venue: "Banquet Hall, The Accord",
-    iconAlt: "Screen Icon",
+    iconAlt: "press meet Icon",
 
     eventDate: "2023-11-18 18:00:00",
     totalSeats: 60,

@@ -1,23 +1,30 @@
 import { PrismaClient } from "@prisma/client";
-import { eventsData } from "./EventData";
+import { eventsData1 } from "./EventData1";
 
 const prisma = new PrismaClient();
 
 async function main() {
-  eventsData.forEach(async (item) => {
-    await prisma.event.create({
-      data: {
-        title: item.title,
-        venue: item.venue,
-        description: item.description,
-        eventColorCode: item.eventColorCode,
-        icon: item.icon,
-        iconAlt: item.iconAlt,
-        totalSeats: item.totalSeats,
-        price: item.price,
-        eventDate: new Date(item.eventDate).toISOString(),
-        eventTime: new Date(item.eventDate).toISOString(),
-      },
+  eventsData1.forEach(async (item) => {
+    const date = await prisma.schedule.create({
+      data: { date: new Date(item.date) },
+    });
+
+    item.events.forEach(async (event) => {
+      await prisma.event.create({
+        data: {
+          title: event.title,
+          venue: event.venue,
+          description: event.description,
+          eventColorCode: event.eventColorCode,
+          icon: event.icon,
+          iconAlt: event.iconAlt,
+          totalSeats: event.totalSeats,
+          availableSeats: event.totalSeats,
+          price: event.price,
+          eventTime: new Date(event.eventDate),
+          scheduleId: date.id,
+        },
+      });
     });
   });
 }

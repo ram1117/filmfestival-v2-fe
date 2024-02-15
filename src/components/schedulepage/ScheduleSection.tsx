@@ -4,13 +4,23 @@ import { useState } from "react";
 import ScheduleMenu from "./ScheduleMenu";
 import ScheduleLegend from "./ScheduleLegend";
 import ScheduleRow from "./ScheduleRow";
-import scheduleData from "@/data/ScheduleData";
+import { Event } from "@prisma/client";
 
-const ScheduleSection = () => {
+interface ScheduleSectionProps {
+  scheduleData: { id: string; date: Date; events: Event[] }[];
+  dateOptions: string[];
+}
+
+const ScheduleSection = ({
+  scheduleData,
+  dateOptions,
+}: ScheduleSectionProps) => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const dateSet = new Set<string>([]);
-  scheduleData.forEach((item) => dateSet.add(item.date));
-  const dateOptions = Array.from(dateSet);
+  // @ts-expect-error groupBy may not work in all browsers
+  const daySchedule = Object.groupBy(
+    scheduleData[activeIndex].events,
+    ({ eventTime }: { eventTime: string }) => eventTime
+  );
 
   return (
     <section className="flex flex-col items-center w-full">
@@ -21,9 +31,11 @@ const ScheduleSection = () => {
       />
       <ScheduleLegend />
       <ul className="w-11/12 lg:w-3/4 max-w-[1248px]">
-        {scheduleData[activeIndex].events.map((event) => (
-          <ScheduleRow schedule={event} key={event.time} />
-        ))}
+        {Object.keys(daySchedule)
+          .sort()
+          .map((time) => (
+            <ScheduleRow schedule={daySchedule[time]} key={time} time={time} />
+          ))}
       </ul>
     </section>
   );

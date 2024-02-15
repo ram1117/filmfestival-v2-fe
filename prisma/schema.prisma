@@ -10,31 +10,37 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model Schedule {
+  id     String   @id @default(cuid())
+  date   DateTime @db.Date()
+  events Event[]
+}
+
 model Event {
-  id          String        @id @default(cuid())
-  title       String
-  venue       String
-  description String
+  id             String        @id @default(cuid())
+  title          String
+  venue          String
+  description    String
   eventColorCode String
-  icon        String
-  iconAlt     String
-  totalSeats  Int
-  price       Float
-  eventDate   DateTime @db.Date()
-  eventTime DateTime @db.Time(3)
-  Reservation Reservation[]
+  icon           String
+  iconAlt        String
+  totalSeats     Int
+  availableSeats Int
+  price          Float
+  scheduleId     String
+  eventTime      DateTime
+  reservations   Reservation[]
+  schedule       Schedule      @relation(fields: [scheduleId], references: [id], onDelete: Cascade)
 }
 
 model Reservation {
-  id        String   @id @default(cuid())
-  eventId   String
-  userId    String
-  seats     Int
-  price     Float
-  event     Event    @relation(fields: [eventId], references: [id], onDelete: Cascade)
-  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  startDate DateTime @db.Date
-  startTime DateTime @db.Time
+  id      String @id @default(cuid())
+  eventId String
+  userId  String
+  seats   Int
+  price   Float
+  event   Event  @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  user    User   @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 model User {
