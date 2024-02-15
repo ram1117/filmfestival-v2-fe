@@ -1,0 +1,73 @@
+"use server";
+
+import { z } from "zod";
+import { SignUpFormState } from "./types";
+import { User } from ".prisma/client";
+import { db } from "@/db";
+import { redirect } from "next/navigation";
+import bcrypt from "bcrypt";
+
+const signUpSchema = z
+  .object({
+    fullname: z
+      .string()
+      .min(6)
+      .regex(/^[a-zA-Z\s]*$/, { message: "Only alphabets and spaces" }),
+    email: z.string().email({ message: "Invalid email format" }),
+    password1: z
+      .string()
+      .min(8)
+      .regex(
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
+        {
+          message:
+            "Password should contain at least 1 uppercase, 1 lowercase, 1 number and 1 special character:",
+        }
+      ),
+    password2: z.string().min(8),
+  })
+  .refine((data) => data.password1 === data.password2, {
+    message: "Passwords do not match.",
+    path: ["password2"],
+  });
+
+const userSignUp = async (
+  prevState: SignUpFormState,
+  formData: FormData
+): Promise<SignUpFormState> => {
+  const validation = signUpSchema.safeParse(Object.fromEntries(formData));
+  if (!validation.success)
+    return { errors: validation.error.flatten().fieldErrors };
+
+  const { fullname, email, password1 } = validation.data;
+  console.log(fullname, email, password1);
+  let user: User;
+  try {
+    user = await db.user.create({
+      data: {
+        name: fullname,
+        email: email,
+        role: "user",
+        password: await bcrypt.hash(password1, 10),
+      },
+    });
+    console.log(user);
+  } catch (error) {
+    if (error instanceof Error)
+      return {
+        errors: {
+          _form: [error.message],
+        },
+      };
+
+    return {
+      errors: {
+        _form: ["Something went Wrong."],
+      },
+    };
+  }
+
+  redirect("/authentication/signin");
+};
+
+export default userSignUp;

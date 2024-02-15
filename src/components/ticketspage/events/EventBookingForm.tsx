@@ -1,39 +1,49 @@
 "use client";
 // import { useFormState } from "react-dom";
-import InputField from "@/atoms/InputField";
+import InputFieldWrapper from "@/atoms/InputField";
 import FormSubmitButton from "@/atoms/FormSubmitButton";
 
 const EventBookingForm = () => (
-  <form className="flex flex-col gap-8">
-    <InputField
+  <form className="flex flex-col">
+    <InputFieldWrapper
       label="Full Name"
-      type="text"
       id="fullname"
-      name="fullname"
       labelClass="w-full lg:w-1/6"
-      inputClass="w-full lg:w-5/6 bg-slate-100"
-      containerClass="lg:gap-6 items-center"
-      required
-    />
-    <InputField
+      containerClass="items-center"
+    >
+      <input
+        type="text"
+        name="fullname"
+        id="fullname"
+        readOnly
+        className="w-full lg:w-5/6 rounded-md p-2 border-2"
+      />
+    </InputFieldWrapper>
+    <InputFieldWrapper
       label="Email"
-      type="text"
-      readonly
       id="email"
-      name="email"
       labelClass="w-full lg:w-1/6"
-      inputClass="w-full lg:w-5/6 bg-slate-100"
-      containerClass="lg:gap-6 items-center"
-    />
+      containerClass="items-center"
+    >
+      <input
+        type="email"
+        name="email"
+        id="email"
+        readOnly
+        className="w-full lg:w-5/6 rounded-md p-2 border-2"
+      />
+    </InputFieldWrapper>
 
-    <div className="flex flex-col lg:flex-row gap-2 lg:gap-6 items-center">
-      <label htmlFor="tickets" className="w-full lg:w-1/6">
-        No. of Tickets
-      </label>
+    <InputFieldWrapper
+      label="No. Of Tickets"
+      id="tickets"
+      labelClass="w-full lg:w-1/6"
+      containerClass="items-center"
+    >
       <select
         id="tickets"
         name="tickets"
-        className="w-24 p-2 rounded-md w-full md:w-5/6 bg-white border"
+        className="w-24 p-2 rounded-md w-full md:w-5/6 bg-white border-2"
       >
         <option value={1}>1</option>
         <option value={2}>2</option>
@@ -41,7 +51,8 @@ const EventBookingForm = () => (
         <option value={4}>4</option>
         <option value={5}>5</option>
       </select>
-    </div>
+    </InputFieldWrapper>
+
     <FormSubmitButton
       buttonText="Book Now"
       pendingText="Booking ..."
