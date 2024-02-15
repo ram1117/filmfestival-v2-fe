@@ -4,6 +4,7 @@ import "./globals.css";
 import MenuBar from "@/components/navbar/MenuBar";
 import NavBar from "@/components/navbar/NavBar";
 import MainFooter from "@/components/footer/MainFooter";
+import PartnersSection from "@/components/homepage/PartnersSection";
 import dynamic from "next/dynamic";
 
 const BreadCrumb = dynamic(() => import("@/components/breadcrumb/BreadCrumb"), {
@@ -33,6 +34,7 @@ export default function RootLayout({
         </div>
 
         {children}
+        <PartnersSection />
         <MainFooter />
       </body>
     </html>

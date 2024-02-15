@@ -1,0 +1,53 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Schedule {
+  id     String   @id @default(cuid())
+  date   DateTime @db.Date()
+  events Event[]
+}
+
+model Event {
+  id             String        @id @default(cuid())
+  title          String
+  venue          String
+  description    String
+  eventColorCode String
+  icon           String
+  iconAlt        String
+  totalSeats     Int
+  availableSeats Int
+  price          Float
+  scheduleId     String
+  eventTime      DateTime
+  reservations   Reservation[]
+  schedule       Schedule      @relation(fields: [scheduleId], references: [id], onDelete: Cascade)
+}
+
+model Reservation {
+  id      String @id @default(cuid())
+  eventId String
+  userId  String
+  seats   Int
+  price   Float
+  event   Event  @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  user    User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model User {
+  id           String        @id @default(cuid())
+  name         String
+  email        String
+  password     String
+  role         String        @default("user")
+  reservations Reservation[]
+}
