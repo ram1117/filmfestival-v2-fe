@@ -1,38 +1,40 @@
 "use client";
 // import { useFormState } from "react-dom";
-// import { useFormStatus } from "react-dom";
+import InputField from "@/atoms/InputField";
+import FormSubmitButton from "@/atoms/FormSubmitButton";
 
 const EventBookingForm = () => (
   <form className="flex flex-col gap-8">
-    <div className="flex gap-2 lg:gap-6 items-center">
-      <label htmlFor="fullname" className="w-2/5">
-        Full Name
-      </label>
-      <input
-        id="fullname"
-        name="fullname"
-        readOnly
-        className="border rounded-md p-2 w-3/5"
-      />
-    </div>
+    <InputField
+      label="Full Name"
+      type="text"
+      id="fulname"
+      name="fullname"
+      labelClass="w-full lg:w-1/6"
+      inputClass="w-full lg:w-5/6 bg-slate-100"
+      containerClass="lg:gap-6 items-center"
+      required
+    />
+    <InputField
+      label="Email"
+      type="text"
+      readonly
+      id="email"
+      name="email"
+      labelClass="w-full lg:w-1/6"
+      inputClass="w-full lg:w-5/6 bg-slate-100"
+      containerClass="lg:gap-6 items-center"
+    />
 
-    <div className="flex gap-2 lg:gap-6 items-center">
-      <label htmlFor="fullname" className="w-2/5">
-        Email
-      </label>
-      <input
-        id="email"
-        name="email"
-        readOnly
-        className="border rounded-md p-2 w-3/5"
-      />
-    </div>
-
-    <div className="flex gap-2 lg:gap-6 items-center">
-      <label htmlFor="tickets" className="w-2/5">
+    <div className="flex flex-col lg:flex-row gap-2 lg:gap-6 items-center">
+      <label htmlFor="tickets" className="w-full lg:w-1/6">
         No. of Tickets
       </label>
-      <select id="tickets" name="tickets" className="w-24 p-2 rounded-md w-3/5">
+      <select
+        id="tickets"
+        name="tickets"
+        className="w-24 p-2 rounded-md w-full md:w-5/6 bg-white border"
+      >
         <option value={1}>1</option>
         <option value={2}>2</option>
         <option value={3}>3</option>
@@ -40,13 +42,11 @@ const EventBookingForm = () => (
         <option value={5}>5</option>
       </select>
     </div>
-
-    <button
-      type="submit"
-      className="bg-custom-red w-max px-6 py-2 rounded-md text-text-primary font-semibold"
-    >
-      Book Now
-    </button>
+    <FormSubmitButton
+      buttonText="Book Now"
+      pendingText="Booking ..."
+      className="w-max"
+    />
   </form>
 );
 
