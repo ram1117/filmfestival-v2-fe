@@ -19,7 +19,7 @@ const FormSubmitButton = ({
     <div className="w-full flex justify-end my-4 lg:my-8">
       <button
         type="submit"
-        className={`${className} bg-custom-red px-8 py-2 rounded-md text-text-primary font-semibold`}
+        className={`${className} bg-custom-red px-8 py-2 rounded-md text-text-primary font-semibold w-1/2`}
       >
         {pending ? pendingText : buttonText}
       </button>

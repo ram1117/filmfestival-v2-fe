@@ -4,7 +4,7 @@ import { z } from "zod";
 import { SignUpFormState } from "./types";
 import { db } from "@/db";
 import { redirect } from "next/navigation";
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 
 const signUpSchema = z
   .object({
@@ -39,6 +39,15 @@ const userSignUp = async (
     return { errors: validation.error.flatten().fieldErrors };
 
   const { fullname, email, password1 } = validation.data;
+
+  const existingUser = await db.user.findFirst({ where: { email: email } });
+  if (existingUser) {
+    return {
+      errors: {
+        email: ["Email already exists"],
+      },
+    };
+  }
 
   try {
     await db.user.create({
