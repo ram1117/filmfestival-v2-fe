@@ -1,52 +1,63 @@
 "use client";
 // import { useFormState } from "react-dom";
-// import { useFormStatus } from "react-dom";
+import InputFieldWrapper from "@/atoms/InputField";
+import FormSubmitButton from "@/atoms/FormSubmitButton";
 
 const EventBookingForm = () => (
-  <form className="flex flex-col gap-8">
-    <div className="flex gap-2 lg:gap-6 items-center">
-      <label htmlFor="fullname" className="w-2/5">
-        Full Name
-      </label>
+  <form className="flex flex-col">
+    <InputFieldWrapper
+      label="Full Name"
+      id="fullname"
+      labelClass="w-full lg:w-1/6"
+      containerClass="items-center"
+    >
       <input
-        id="fullname"
+        type="text"
         name="fullname"
+        id="fullname"
         readOnly
-        className="border rounded-md p-2 w-3/5"
+        className="w-full lg:w-5/6 rounded-md p-2 border-2"
       />
-    </div>
-
-    <div className="flex gap-2 lg:gap-6 items-center">
-      <label htmlFor="fullname" className="w-2/5">
-        Email
-      </label>
+    </InputFieldWrapper>
+    <InputFieldWrapper
+      label="Email"
+      id="email"
+      labelClass="w-full lg:w-1/6"
+      containerClass="items-center"
+    >
       <input
-        id="email"
+        type="email"
         name="email"
+        id="email"
         readOnly
-        className="border rounded-md p-2 w-3/5"
+        className="w-full lg:w-5/6 rounded-md p-2 border-2"
       />
-    </div>
+    </InputFieldWrapper>
 
-    <div className="flex gap-2 lg:gap-6 items-center">
-      <label htmlFor="tickets" className="w-2/5">
-        No. of Tickets
-      </label>
-      <select id="tickets" name="tickets" className="w-24 p-2 rounded-md w-3/5">
+    <InputFieldWrapper
+      label="No. Of Tickets"
+      id="tickets"
+      labelClass="w-full lg:w-1/6"
+      containerClass="items-center"
+    >
+      <select
+        id="tickets"
+        name="tickets"
+        className="w-24 p-2 rounded-md w-full md:w-5/6 bg-white border-2"
+      >
         <option value={1}>1</option>
         <option value={2}>2</option>
         <option value={3}>3</option>
         <option value={4}>4</option>
         <option value={5}>5</option>
       </select>
-    </div>
+    </InputFieldWrapper>
 
-    <button
-      type="submit"
-      className="bg-custom-red w-max px-6 py-2 rounded-md text-text-primary font-semibold"
-    >
-      Book Now
-    </button>
+    <FormSubmitButton
+      buttonText="Book Now"
+      pendingText="Booking ..."
+      className="w-max"
+    />
   </form>
 );
 
