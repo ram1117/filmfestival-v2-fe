@@ -2,7 +2,6 @@
 
 import { z } from "zod";
 import { SignUpFormState } from "./types";
-import { User } from ".prisma/client";
 import { db } from "@/db";
 import { redirect } from "next/navigation";
 import bcrypt from "bcrypt";
@@ -40,10 +39,9 @@ const userSignUp = async (
     return { errors: validation.error.flatten().fieldErrors };
 
   const { fullname, email, password1 } = validation.data;
-  console.log(fullname, email, password1);
-  let user: User;
+
   try {
-    user = await db.user.create({
+    await db.user.create({
       data: {
         name: fullname,
         email: email,
@@ -51,7 +49,6 @@ const userSignUp = async (
         password: await bcrypt.hash(password1, 10),
       },
     });
-    console.log(user);
   } catch (error) {
     if (error instanceof Error)
       return {
