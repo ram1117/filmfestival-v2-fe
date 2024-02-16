@@ -32,7 +32,6 @@ export default function RootLayout({
         <div className="hidden md:block absolute right-10 md:top-28 lg:top-32">
           <BreadCrumb />
         </div>
-
         {children}
         <PartnersSection />
         <MainFooter />

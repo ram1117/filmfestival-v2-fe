@@ -2,6 +2,7 @@ import { db } from "@/db";
 import ImageWrapper from "@/atoms/ImageWrapper";
 import { notFound } from "next/navigation";
 import EventBookingForm from "@/components/ticketspage/events/EventBookingForm";
+import { auth } from "@/auth";
 
 interface ReservePageProps {
   params: {
@@ -18,8 +19,11 @@ const ReservePage = async ({ params }: ReservePageProps) => {
       schedule: true,
     },
   });
+  const isSeatsAvailable = event?.availableSeats !== 0;
 
   if (!event) notFound();
+
+  const session = await auth();
 
   return (
     <section className="min-h-[80vh] w:11/12 max-w-[1024px] mx-auto my-12  lg:my-16 p-4 lg:p-8 text-text-secondary">
@@ -59,7 +63,19 @@ const ReservePage = async ({ params }: ReservePageProps) => {
           <h2>Ticket Price - ₹ {event?.price}</h2>
         </div>
       </div>
-      <EventBookingForm />
+
+      {isSeatsAvailable && (
+        <EventBookingForm
+          user={session?.user}
+          eventId={eventId}
+          ticketPrice={event.price}
+        />
+      )}
+      {!isSeatsAvailable && (
+        <h3 className="text-lg lg:text-xl font-semibold font-lato text-custom-red">
+          Sorry. This event is fully booked
+        </h3>
+      )}
     </section>
   );
 };

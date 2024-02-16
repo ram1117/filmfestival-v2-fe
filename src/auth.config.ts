@@ -17,6 +17,17 @@ export const authConfig = {
       }
       return true;
     },
+    async jwt({ token, user }) {
+      if (user) token.user = user;
+      return token;
+    },
+    async session({ session, token }) {
+      if (session && token.user) {
+        // @ts-expect-error: Let's ignore a compile error
+        session.user = token.user;
+      }
+      return session;
+    },
   },
   providers: [],
 } satisfies NextAuthConfig;
