@@ -3,24 +3,33 @@ import { db } from "@/db";
 import { auth } from "@/auth";
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
-
+import { EventBookFormState } from "./types";
 const reserveEventAction = async (
   eventId: string,
   totalPrice: number,
+  formState: EventBookFormState,
   formData: FormData
-) => {
+): Promise<EventBookFormState> => {
   const event = await db.event.findUnique({ where: { id: eventId } });
-  const qty = formData.get("tickets");
 
+  if (!event)
+    return {
+      errors: ["Error retrieving event details.."],
+    };
+
+  const qty = formData.get("tickets");
   let quantity = 0;
   if (typeof qty === "string") quantity = parseInt(qty);
 
   const session = await auth();
   if (!session?.user)
     return {
-      errors: {
-        _form: ["Must be signed in to perform this action"],
-      },
+      errors: ["Must be signed in to perform this action"],
+    };
+
+  if (event.availableSeats < quantity)
+    return {
+      errors: [`Maximum available seats is ${event.availableSeats}`],
     };
 
   try {
@@ -39,7 +48,10 @@ const reserveEventAction = async (
         data: { availableSeats: newTotal },
       });
     }
-  } catch (error) {}
+  } catch (error) {
+    if (error instanceof Error) return { errors: [error.message] };
+    return { errors: ["Something went wrong..."] };
+  }
 
   revalidatePath("/account");
   redirect("/account");

@@ -4,9 +4,10 @@ import FormSubmitButton from "@/atoms/FormSubmitButton";
 import { User } from "next-auth";
 import reserveEventAction from "@/actions/reserveEventAction";
 import { useState } from "react";
+import { useFormState } from "react-dom";
 
 interface EventBookingFormProps {
-  user: User | undefined;
+  user: User;
   eventId: string;
   ticketPrice: number;
 }
@@ -18,13 +19,6 @@ const EventBookingForm = ({
 }: EventBookingFormProps) => {
   const [quantity, setQuantity] = useState(1);
 
-  if (!user)
-    return (
-      <h2 className="text-base font-semibold">
-        Should be logged in to access the form
-      </h2>
-    );
-
   const handleChange = (event: React.FormEvent<HTMLSelectElement>) => {
     setQuantity(parseInt(event.currentTarget.value));
   };
@@ -35,8 +29,12 @@ const EventBookingForm = ({
     quantity * ticketPrice
   );
 
+  const [formState, formAction] = useFormState(actionWithEventId, {
+    errors: [],
+  });
+
   return (
-    <form className="flex flex-col" action={actionWithEventId}>
+    <form className="flex flex-col" action={formAction}>
       <InputFieldWrapper
         label="Full Name"
         id="fullname"
@@ -90,6 +88,9 @@ const EventBookingForm = ({
       <h3 className="text-green-600 font-semibold text-xl my-4 text-center">
         Total Price - {quantity * ticketPrice}
       </h3>
+      <p className="my-4 text-red-500 text-sm">
+        {formState.errors && formState.errors.join(",")}
+      </p>
       <FormSubmitButton
         buttonText="Book Now"
         pendingText="Booking ..."

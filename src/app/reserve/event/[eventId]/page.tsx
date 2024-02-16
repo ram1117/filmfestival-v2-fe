@@ -63,8 +63,7 @@ const ReservePage = async ({ params }: ReservePageProps) => {
           <h2>Ticket Price - ₹ {event?.price}</h2>
         </div>
       </div>
-
-      {isSeatsAvailable && (
+      {isSeatsAvailable && session?.user && (
         <EventBookingForm
           user={session?.user}
           eventId={eventId}
@@ -75,6 +74,11 @@ const ReservePage = async ({ params }: ReservePageProps) => {
         <h3 className="text-lg lg:text-xl font-semibold font-lato text-custom-red">
           Sorry. This event is fully booked
         </h3>
+      )}
+      {!session?.user && (
+        <h2 className="text-base font-semibold">
+          Should be logged in to access the form
+        </h2>
       )}
     </section>
   );
