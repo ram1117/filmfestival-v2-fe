@@ -1,5 +1,6 @@
 import { db } from "@/db";
-import CancelBookingForm from "./CancelBookingForm";
+import CancelButton from "./CancelButton";
+import SectionHeader from "@/atoms/SectionHeader";
 
 interface ReservationsProps {
   userId: string;
@@ -12,18 +13,16 @@ const Reservations = async ({ userId }: ReservationsProps) => {
   });
 
   return (
-    <div>
-      <h2 className="my-8 text-center text-lg lg:text-2xl font-semibold">
-        Reservations
-      </h2>
-      <div className=" my-8 px-2 py-4 lg:px-6 lg:py-8 gap-4 shadow-lg shadow-slate-300">
-        <ul>
+    <div className="flex flex-col items-center my-6">
+      <SectionHeader color="text-text-seconary">Reservations</SectionHeader>
+      <div className="w-full my-8 px-2 py-4 lg:px-6 lg:py-8 gap-4 rounded-xl shadow-custom">
+        <ul className="flex gap-4 flex-col">
           {reservations.map((item) => (
             <li
               key={item.id}
-              className="flex flex-col sm:flex-row gap-2 py-2 border-b items-center"
+              className="flex flex-col sm:flex-row gap-4 py-2 border-b items-center"
             >
-              <h2 className="w-full sm:w-5/12">{item.event.title}</h2>
+              <h2 className="w-full sm:w-7/12">{item.event.title}</h2>
               <h2 className="w-full sm:w-3/12">
                 {item.event.eventTime.toLocaleString("en", {
                   day: "numeric",
@@ -31,12 +30,8 @@ const Reservations = async ({ userId }: ReservationsProps) => {
                   hour: "2-digit",
                 })}
               </h2>
-              <div className="w-full sm:w-4/12 lg:w-2/12">
-                <CancelBookingForm
-                  bookingId={item.id}
-                  eventId={item.eventId}
-                  quantity={item.seats}
-                />
+              <div className="w-full sm:w-max text-sm lg:text-base">
+                <CancelButton booking={item} event={item.event} />
               </div>
             </li>
           ))}

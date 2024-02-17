@@ -22,9 +22,9 @@ const CancelBookingForm = ({
   return (
     <form action={cancelActionWithData}>
       <FormSubmitButton
-        buttonText="Cancel"
+        buttonText="Proceed"
         pendingText="Cancelling.."
-        className="w-1/2 lg:!w-full text-sm lg:text-base"
+        className="text-sm lg:text-base !w-32"
       />
     </form>
   );

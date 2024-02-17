@@ -16,7 +16,7 @@ const AccountPage = async () => {
 
   return (
     <section className="min-h-[70vh] max-w-[996px] mx-auto my-16 text-text-secondary font-roboto-condensed">
-      <div className="flex flex-col lg:flex-row justify-between px-2 py-4 lg:px-6 lg:py-8 gap-4 shadow-lg shadow-slate-300">
+      <div className="flex flex-col lg:flex-row justify-between px-2 py-4 lg:px-6 lg:py-8 gap-4 rounded-xl shadow-custom">
         <h2 className="text-lg lg:text-xl">{session.user.name}</h2>
         <h2 className="text-lg lg:text-xl">{session.user.email}</h2>
       </div>
