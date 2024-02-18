@@ -1,15 +1,19 @@
 "use client";
+
 import InputFieldWrapper from "@/atoms/InputField";
 import FormSubmitButton from "@/atoms/FormSubmitButton";
 import Link from "next/link";
 import useSignin from "@/actions/userSignin";
 import { useFormState } from "react-dom";
+import googleSignInAction from "@/actions/googleSignInAction";
+import ImageWrapper from "@/atoms/ImageWrapper";
+import GoogleIcon from "@public/icons/icon-google.svg";
 
 const SignInPage = () => {
   const [formState, formAction] = useFormState(useSignin, { errors: [] });
 
   return (
-    <div className="">
+    <div>
       <form className="mb-8" action={formAction}>
         <InputFieldWrapper
           label="Email"
@@ -44,6 +48,19 @@ const SignInPage = () => {
           {formState.errors && formState.errors.join(",")}
         </p>
         <FormSubmitButton buttonText="Sign In" pendingText="Signing In ..." />
+      </form>
+      <form action={googleSignInAction}>
+        <button
+          type="submit"
+          className="my-6 border-2 px-6 py-2 rounded-md w-full shadow-md custom-shadow flex items-center justify-center"
+        >
+          <ImageWrapper
+            src={GoogleIcon}
+            alt="google icon"
+            imageSize="h-4 w-4 mx-2"
+          />
+          Sign in with Google
+        </button>
       </form>
       <h2>
         Don&apos;t have an Account?{" "}
