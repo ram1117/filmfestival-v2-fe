@@ -44,7 +44,7 @@ export const {
         const user = await db.user.findFirst({
           where: { email: email as string },
         });
-        if (!user) return null;
+        if (!user || !user.password) return null;
 
         const passwordMatch = await bcrypt.compare(
           password as string,
