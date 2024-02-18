@@ -1,6 +1,6 @@
 "use client";
 
-import { allAccessData, allAccessInfo } from "@/data/TicketsData";
+import { allAccessData, allAccessInfo } from "../../../prisma/PassesData";
 import { useEffect, useState } from "react";
 import AllAccessItem from "./AllAccessItem";
 import ImageWrapper from "@/atoms/ImageWrapper";

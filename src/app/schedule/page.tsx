@@ -1,10 +1,6 @@
 import SectionHeader from "@/atoms/SectionHeader";
 import { db } from "@/db";
-import dynamic from "next/dynamic";
-
-const ScheduleSection = dynamic(
-  () => import("@/components/schedulepage/ScheduleSection")
-);
+import ScheduleSection from "@/components/schedulepage/ScheduleSection";
 
 const SchedulePage = async () => {
   const events = await db.schedule.findMany({

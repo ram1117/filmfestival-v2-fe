@@ -1,6 +1,8 @@
 import { db } from "@/db";
 import CancelButton from "./CancelButton";
 import SectionHeader from "@/atoms/SectionHeader";
+import ImageWrapper from "@/atoms/ImageWrapper";
+import { IconSelector } from "@/utils/iconscolors";
 
 interface ReservationsProps {
   userId: string;
@@ -20,17 +22,25 @@ const Reservations = async ({ userId }: ReservationsProps) => {
           {reservations.map((item) => (
             <li
               key={item.id}
-              className="flex flex-col sm:flex-row gap-4 py-2 border-b items-center"
+              className="grid grid-cols-1 lg:grid-cols-10 gap-4 py-2 items-center border-b"
             >
-              <h2 className="w-full sm:w-7/12">{item.event.title}</h2>
-              <h2 className="w-full sm:w-3/12">
+              <h2 className="lg:col-span-5 flex gap-2 items-center">
+                <ImageWrapper
+                  src={IconSelector[item.event.eventType].icon}
+                  alt={IconSelector[item.event.eventType].alt}
+                  imageSize="h-4 w-4"
+                />
+                {item.event.title}
+              </h2>
+              <h2 className="lg:col-span-2">
                 {item.event.eventTime.toLocaleString("en", {
                   day: "numeric",
                   month: "short",
                   hour: "2-digit",
                 })}
               </h2>
-              <div className="w-full sm:w-max text-sm lg:text-base">
+              <h2 className="lg:col-span-2">{item.event.venue}</h2>
+              <div className="lg:col-span-1 text-sm lg:text-base flex items-center justify-center">
                 <CancelButton booking={item} event={item.event} />
               </div>
             </li>

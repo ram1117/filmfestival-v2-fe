@@ -3,6 +3,7 @@ import ImageWrapper from "@/atoms/ImageWrapper";
 import { notFound } from "next/navigation";
 import EventBookingForm from "@/components/ticketspage/events/EventBookingForm";
 import { auth } from "@/auth";
+import { IconSelector } from "@/utils/iconscolors";
 
 interface ReservePageProps {
   params: {
@@ -31,8 +32,8 @@ const ReservePage = async ({ params }: ReservePageProps) => {
         <div className="flex flex-col lg:flex-row gap-4 justify-between border-b py-4">
           <div className="flex gap-4 items-center">
             <ImageWrapper
-              src={event?.icon}
-              alt={event?.iconAlt}
+              src={IconSelector[event.eventType].icon}
+              alt={IconSelector[event.eventType].alt}
               imageSize="h-8 w-8 md:h-16 md:h-16"
             />
             <div className="">
