@@ -10,7 +10,9 @@ const reserveEventAction = async (
   formState: EventBookFormState,
   formData: FormData
 ): Promise<EventBookFormState> => {
+  await db.$connect();
   const event = await db.event.findUnique({ where: { id: eventId } });
+  await db.$disconnect();
 
   if (!event)
     return {

@@ -41,9 +41,11 @@ export const {
       async authorize(credentials) {
         const { email, password } = credentials;
 
+        await db.$connect();
         const user = await db.user.findFirst({
           where: { email: email as string },
         });
+        await db.$disconnect();
         if (!user || !user.password) return null;
 
         const passwordMatch = await bcrypt.compare(

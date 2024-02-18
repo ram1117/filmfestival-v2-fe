@@ -11,10 +11,12 @@ interface ReservationsProps {
 }
 
 const Reservations = async ({ userId }: ReservationsProps) => {
+  await db.$connect();
   const reservations = await db.reservation.findMany({
     where: { userId: userId },
     include: { event: true },
   });
+  await db.$disconnect();
 
   return (
     <div className="flex flex-col items-center my-6">

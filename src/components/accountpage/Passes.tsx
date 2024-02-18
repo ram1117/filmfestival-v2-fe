@@ -9,10 +9,14 @@ interface PassesProps {
 }
 
 const Passes = async ({ userId }: PassesProps) => {
+  await db.$connect();
+
   const bookedPasses = await db.passBooking.findMany({
     where: { userId: userId },
     include: { pass: true },
   });
+
+  await db.$disconnect();
 
   return (
     <div className="flex flex-col items-center my-6">

@@ -3,10 +3,12 @@ import { db } from "@/db";
 import ScheduleSection from "@/components/schedulepage/ScheduleSection";
 
 const SchedulePage = async () => {
+  await db.$connect();
   const events = await db.schedule.findMany({
     orderBy: { date: "asc" },
     include: { events: true },
   });
+  await db.$disconnect();
 
   const dateOptions = events.map((date) =>
     date.date.toLocaleString("default", { day: "2-digit", month: "short" })
