@@ -6,7 +6,9 @@ import InputFieldWrapper from "@/atoms/InputField";
 import Link from "next/link";
 
 const AllAccessSection = async () => {
+  await db.$connect();
   const accessPasses = await db.pass.findMany({ orderBy: { price: "desc" } });
+  await db.$disconnect();
   if (!accessPasses) notFound();
 
   const session = await auth();

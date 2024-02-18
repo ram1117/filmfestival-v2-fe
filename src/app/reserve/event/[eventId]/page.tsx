@@ -14,12 +14,15 @@ interface ReservePageProps {
 const ReservePage = async ({ params }: ReservePageProps) => {
   const eventId = params.eventId;
 
+  await db.$connect();
   const event = await db.event.findUnique({
     where: { id: eventId },
     include: {
       schedule: true,
     },
   });
+
+  await db.$disconnect();
   const isSeatsAvailable = event?.availableSeats !== 0;
 
   if (!event) notFound();

@@ -40,6 +40,7 @@ const userSignUp = async (
 
   const { fullname, email, password1 } = validation.data;
 
+  await db.$connect();
   const existingUser = await db.user.findFirst({ where: { email: email } });
   if (existingUser) {
     return {
@@ -72,7 +73,7 @@ const userSignUp = async (
       },
     };
   }
-
+  await db.$disconnect();
   redirect("/authentication/signin");
 };
 
