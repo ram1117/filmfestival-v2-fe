@@ -1,5 +1,4 @@
 import ImageWrapper from "@/atoms/ImageWrapper";
-import Link from "next/link";
 
 interface VenueItemProps {
   venueData: {
@@ -41,11 +40,6 @@ const VenueItem = ({ venueData }: VenueItemProps) => (
           <h6 className="font-light">
             {venueData.address}, {venueData.city}
           </h6>
-          <Link href={venueData.link}>
-            <h6 className="text-sm lg:text-base text-center p-1 lg:p-2 border rounded-md border-custom-red w-32 lg:w-44 bg-custom-red text-text-primary font-semibold text-xs lg:text-sm">
-              {venueData.linkText}
-            </h6>
-          </Link>
         </div>
       )}
     </div>

@@ -18,7 +18,7 @@ const NavList = ({ className }: NavListProps) => (
     ))}
     <Link href="/reserve">
       <li className="p-2 text-text-primary border-2 border-custom-red bg-custom-red ">
-        Tickets
+        Passes
       </li>
     </Link>
   </ul>

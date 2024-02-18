@@ -7,3 +7,7 @@ export interface SignUpFormState {
     _form?: string[];
   };
 }
+
+export interface EventBookFormState {
+  errors: string[];
+}

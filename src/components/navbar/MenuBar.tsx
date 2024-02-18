@@ -4,7 +4,6 @@ import userSignoutAction from "@/actions/userSignOut";
 
 const MenuBar = async () => {
   const session = await auth();
-  console.log(session?.user);
 
   const showLink = session ? (
     <form action={userSignoutAction}>

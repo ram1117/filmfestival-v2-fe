@@ -2,6 +2,8 @@ import { db } from "@/db";
 import ImageWrapper from "@/atoms/ImageWrapper";
 import { notFound } from "next/navigation";
 import EventBookingForm from "@/components/ticketspage/events/EventBookingForm";
+import { auth } from "@/auth";
+import { IconSelector } from "@/utils/iconscolors";
 
 interface ReservePageProps {
   params: {
@@ -18,17 +20,20 @@ const ReservePage = async ({ params }: ReservePageProps) => {
       schedule: true,
     },
   });
+  const isSeatsAvailable = event?.availableSeats !== 0;
 
   if (!event) notFound();
 
+  const session = await auth();
+
   return (
-    <section className="min-h-[80vh] w:11/12 max-w-[1024px] mx-auto my-12  lg:my-16 p-4 lg:p-8 text-text-secondary">
+    <section className="min-h-[80vh] w:11/12 max-w-[1024px] mx-auto my-12  lg:my-16 p-4 lg:p-8 text-text-secondary font-roboto-condensed">
       <div className="">
         <div className="flex flex-col lg:flex-row gap-4 justify-between border-b py-4">
           <div className="flex gap-4 items-center">
             <ImageWrapper
-              src={event?.icon}
-              alt={event?.iconAlt}
+              src={IconSelector[event.eventType].icon}
+              alt={IconSelector[event.eventType].alt}
               imageSize="h-8 w-8 md:h-16 md:h-16"
             />
             <div className="">
@@ -59,7 +64,23 @@ const ReservePage = async ({ params }: ReservePageProps) => {
           <h2>Ticket Price - ₹ {event?.price}</h2>
         </div>
       </div>
-      <EventBookingForm />
+      {isSeatsAvailable && session?.user && (
+        <EventBookingForm
+          user={session?.user}
+          eventId={eventId}
+          ticketPrice={event.price}
+        />
+      )}
+      {!isSeatsAvailable && (
+        <h3 className="text-lg lg:text-xl font-semibold font-lato text-custom-red">
+          Sorry. This event is fully booked
+        </h3>
+      )}
+      {!session?.user && (
+        <h2 className="text-base font-semibold">
+          Should be logged in to access the form
+        </h2>
+      )}
     </section>
   );
 };
