@@ -49,10 +49,13 @@ const SignInPage = () => {
         </p>
         <FormSubmitButton buttonText="Sign In" pendingText="Signing In ..." />
       </form>
-      <form action={googleSignInAction}>
+      <form
+        action={googleSignInAction}
+        className="w-full flex items-center justify-center"
+      >
         <button
           type="submit"
-          className="my-6 border-2 px-6 py-2 rounded-md w-full shadow-md custom-shadow flex items-center justify-center"
+          className="my-6 border-2 px-6 py-2 w-full md:w-1/2 rounded-md shadow-md custom-shadow flex items-center justify-center"
         >
           <ImageWrapper
             src={GoogleIcon}
