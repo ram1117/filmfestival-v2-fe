@@ -3,7 +3,7 @@ import SectionHeader from "@/atoms/SectionHeader";
 
 const ReservePage = () => (
   <main className="flex flex-col items-center py-6 lg:py-12 bg-bg-color-primary min-h-[90vh]">
-    <SectionHeader color="text-text-secondary">All Access Pass</SectionHeader>
+    <SectionHeader color="text-text-secondary">Access Passes</SectionHeader>
     <TicketsSection />
   </main>
 );

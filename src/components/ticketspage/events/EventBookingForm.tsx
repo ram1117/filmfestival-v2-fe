@@ -67,14 +67,14 @@ const EventBookingForm = ({
       </InputFieldWrapper>
 
       <InputFieldWrapper
-        label="No. Of Tickets"
-        id="tickets"
+        label="No. Of Passes"
+        id="passes"
         labelClass="w-full lg:w-1/6"
         containerClass="items-center"
       >
         <select
-          id="tickets"
-          name="tickets"
+          id="passes"
+          name="passes"
           className="w-24 p-2 rounded-md w-full md:w-5/6 bg-white border-2"
           onChange={handleChange}
         >

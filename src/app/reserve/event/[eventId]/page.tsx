@@ -27,7 +27,7 @@ const ReservePage = async ({ params }: ReservePageProps) => {
   const session = await auth();
 
   return (
-    <section className="min-h-[80vh] w:11/12 max-w-[1024px] mx-auto my-12  lg:my-16 p-4 lg:p-8 text-text-secondary">
+    <section className="min-h-[80vh] w:11/12 max-w-[1024px] mx-auto my-12  lg:my-16 p-4 lg:p-8 text-text-secondary font-roboto-condensed">
       <div className="">
         <div className="flex flex-col lg:flex-row gap-4 justify-between border-b py-4">
           <div className="flex gap-4 items-center">
