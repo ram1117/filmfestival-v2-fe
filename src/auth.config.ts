@@ -28,6 +28,9 @@ export const authConfig = {
       }
       return session;
     },
+    async redirect({ baseUrl }) {
+      return baseUrl;
+    },
   },
   providers: [],
 } satisfies NextAuthConfig;
