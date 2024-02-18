@@ -17,9 +17,13 @@ const reserveEventAction = async (
       errors: ["Error retrieving event details.."],
     };
 
+  console.log(formData);
+
   const qty = formData.get("tickets");
   let quantity = 0;
   if (typeof qty === "string") quantity = parseInt(qty);
+
+  console.log("quantity -= ", quantity);
 
   const session = await auth();
   if (!session?.user)

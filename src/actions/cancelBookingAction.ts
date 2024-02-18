@@ -11,7 +11,6 @@ const cancelBookingAction = async (
   const event = await db.event.findUnique({ where: { id: eventId } });
 
   if (!event) return null;
-  // console.log(event);
   const newTotal = event?.availableSeats + quantity;
   try {
     await db.event.update({

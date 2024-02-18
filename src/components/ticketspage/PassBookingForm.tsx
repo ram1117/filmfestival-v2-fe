@@ -4,14 +4,19 @@ import { Pass } from "@prisma/client";
 import FormSubmitButton from "@/atoms/FormSubmitButton";
 import InputFieldWrapper from "@/atoms/InputField";
 import passBookingAction from "@/actions/passBookingAction";
+import { useFormState } from "react-dom";
 
 interface PassBookingFormProps {
   passes: Pass[];
 }
 
 const PassBookingForm = ({ passes }: PassBookingFormProps) => {
+  const [formState, formAction] = useFormState(passBookingAction, {
+    errors: [],
+  });
+
   return (
-    <form className=" w-full font-roboto-condensed" action={passBookingAction}>
+    <form className=" w-full font-roboto-condensed" action={formAction}>
       <div className="my-6 lg:my-16 border p-4 lg:p-12">
         <h3 className="text-lg lg:text-xl my-6 font-semibold font-lato text-custom-red">
           Select a pass
@@ -52,6 +57,9 @@ const PassBookingForm = ({ passes }: PassBookingFormProps) => {
           </select>
         </InputFieldWrapper>
       </div>
+      <p className="my-4 text-red-500 text-sm">
+        {formState.errors && formState.errors.join(",")}
+      </p>
       <FormSubmitButton pendingText="Booking.." buttonText="Book" />
     </form>
   );

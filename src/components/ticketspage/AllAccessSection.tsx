@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import PassBookingForm from "./PassBookingForm";
 import { auth } from "@/auth";
 import InputFieldWrapper from "@/atoms/InputField";
+import Link from "next/link";
 
 const AllAccessSection = async () => {
   const accessPasses = await db.pass.findMany({ orderBy: { price: "desc" } });
@@ -48,6 +49,15 @@ const AllAccessSection = async () => {
       </div>
 
       <PassBookingForm passes={accessPasses} />
+      <h2 className="my-6 text-left text-lg lg:text-xl w-full">
+        For tickets for individual events, please check the
+        <Link href={"/schedule"}>
+          <span className="text-custom-red font-semibold mx-2">
+            Schedule Page
+          </span>
+        </Link>
+      </h2>
+
       <ul className="w-full text-xs md:text-sm list-disc list-inside my-4 lg:my-8">
         {accessPasses.map((item) => (
           <li key={item.id}>

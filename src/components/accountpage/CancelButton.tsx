@@ -2,30 +2,29 @@
 
 import { useState } from "react";
 import CancelPopup from "./CancelPopup";
-import { Event, Reservation } from "@prisma/client";
 
 interface CancelButtonProps {
-  event: Event;
-  booking: Reservation;
+  cancelForm: React.ReactNode;
+  popupContent: React.ReactNode;
 }
 
-const CancelButton = ({ event, booking }: CancelButtonProps) => {
+const CancelButton = ({ cancelForm, popupContent }: CancelButtonProps) => {
   const [openPopup, setOpenPopup] = useState(false);
 
   return (
     <div>
       <button
         type="button"
-        className=" bg-custom-red text-text-primary py-2 px-4 rounded-md"
+        className=" bg-custom-red text-text-primary py-2 px-4 rounded-md font-semibold"
         onClick={() => setOpenPopup((prev) => !prev)}
       >
         Cancel
       </button>
       {openPopup && (
         <CancelPopup
-          event={event}
-          booking={booking}
+          popupContent={popupContent}
           setOpenPopup={setOpenPopup}
+          cancelForm={cancelForm}
         />
       )}
     </div>

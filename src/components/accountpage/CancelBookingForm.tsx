@@ -1,18 +1,23 @@
 import FormSubmitButton from "@/atoms/FormSubmitButton";
-import cancelBookingAction from "@/actions/cancelBookingAction";
 
 interface CancelBookingFormProps {
   eventId: string;
   bookingId: string;
   quantity: number;
+  formAction: (
+    eventId: string,
+    bookingId: string,
+    quantity: number
+  ) => Promise<null>;
 }
 
 const CancelBookingForm = ({
   eventId,
   bookingId,
   quantity,
+  formAction,
 }: CancelBookingFormProps) => {
-  const cancelActionWithData = cancelBookingAction.bind(
+  const cancelActionWithData = formAction.bind(
     null,
     eventId,
     bookingId,

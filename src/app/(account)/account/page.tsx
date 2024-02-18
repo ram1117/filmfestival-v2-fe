@@ -1,5 +1,6 @@
 import { auth } from "@/auth";
 import Reservations from "@/components/accountpage/Reservations";
+import Passes from "@/components/accountpage/Passes";
 
 const AccountPage = async () => {
   const session = await auth();
@@ -21,6 +22,7 @@ const AccountPage = async () => {
         <h2 className="text-lg lg:text-xl">{session.user.email}</h2>
       </div>
       <Reservations userId={session.user.id || ""} />
+      <Passes userId={session.user.id || ""} />
     </section>
   );
 };
