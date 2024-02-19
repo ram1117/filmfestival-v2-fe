@@ -9,7 +9,6 @@ const passBookingAction = async (
   formState: EventBookFormState,
   formData: FormData
 ): Promise<EventBookFormState> => {
-  await db.$connect();
   const session = await auth();
 
   if (!session || !session.user)
@@ -53,7 +52,6 @@ const passBookingAction = async (
       errors: ["Something went wrong"],
     };
   }
-  await db.$disconnect();
   revalidatePath("/account");
   redirect("/account");
 };

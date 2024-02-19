@@ -8,7 +8,6 @@ const cancelBookingAction = async (
   bookingId: string,
   quantity: number
 ) => {
-  await db.$connect();
   const event = await db.event.findUnique({ where: { id: eventId } });
 
   if (!event) return null;
@@ -23,7 +22,6 @@ const cancelBookingAction = async (
   } catch (error) {
     throw error;
   }
-  await db.$disconnect();
   revalidatePath("/account");
   redirect("/account");
 };
