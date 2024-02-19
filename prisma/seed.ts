@@ -8,6 +8,7 @@ async function main() {
   try {
     await prisma.schedule.deleteMany({});
     await prisma.event.deleteMany({});
+    await prisma.passBooking.deleteMany({});
     await prisma.pass.deleteMany({});
 
     eventsData1.forEach(async (item) => {
