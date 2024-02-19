@@ -6,6 +6,10 @@ const prisma = new PrismaClient();
 
 async function main() {
   try {
+    await prisma.schedule.deleteMany({});
+    await prisma.event.deleteMany({});
+    await prisma.pass.deleteMany({});
+
     eventsData1.forEach(async (item) => {
       const date = await prisma.schedule.create({
         data: { date: new Date(item.date) },
