@@ -9,7 +9,6 @@ const cancelPassAction = async (
   bookingId: string,
   quantity: number
 ) => {
-  await db.$connect();
   const pass = await db.pass.findUnique({ where: { id: eventId } });
 
   if (!pass) return null;
@@ -24,7 +23,6 @@ const cancelPassAction = async (
   } catch (error) {
     throw error;
   }
-  await db.$disconnect();
   revalidatePath("/account");
   redirect("/account");
 };

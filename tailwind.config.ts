@@ -19,6 +19,7 @@ const config: Config = {
         "about-bg": "url('/images/about-page-bg.svg')",
         "past-event-1": "url('/images/festival-bg-1.svg')",
         "past-event-2": "url('/images/festival-bg-2.svg')",
+        loading: "linear-gradient(-45deg, #eee 40%, #fafafa 50%, #eee 60%)",
       },
       backgroundColor: {
         "bg-color-primary": "#f7f7f7",
